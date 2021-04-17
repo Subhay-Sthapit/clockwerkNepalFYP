@@ -14,7 +14,7 @@ class CustomerFrontendController extends Controller
 
     public function user_home(customer $customer){
         $users = DB::table('users')->get();
-        $service_centers = DB::table('service_centers')->get();
+        $service_centers = DB::table('service_centers')->paginate(6);
         return view('user-home',['customer'=>$customer,'service_centers'=>$service_centers,'users'=>$users]);
     }
 

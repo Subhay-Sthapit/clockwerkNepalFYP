@@ -13,9 +13,6 @@ class BookingController extends Controller
 
     public function create(Request $request, customer $customer, service_center $service_center){
 
-//        validation code
-
-//        validation code ends
 
         $booking = new booking();
         $booking->customer_id = $customer->id;

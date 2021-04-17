@@ -21,7 +21,7 @@ class CreateBookingsTable extends Migration
             $table->string('vehicle_type');
             $table->string('vehicle_name');
             $table->longText('booking_description');
-            $table->string('booking_status')->default('pending');
+            $table->string('booking_status');
             $table->timestamps();
         });
     }

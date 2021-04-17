@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -10,11 +10,11 @@
     {{--links--}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('User_Frontend/user_frontend.css')}}">
     {{--    icon --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('User_Frontend/user_frontend.css')}}">
 </head>
-<body>
+<body class="d-flex flex-column h-100">
 <header class="site-header bg-white shadow-sm">
     <div class="container">
         <div class="d-flex flex-wrap justify-content-between py-3">
@@ -61,39 +61,34 @@
 
 {{--footer section--}}
 
-<div class="footer-section">
-    <footer>
-        <div class="logo">
-            <img src="{{asset('User_Frontend/user_login/images/ClockWerkNepalLogo.png')}}" style="height: 150px; width: 240px" alt="">
+<footer class="footer mt-auto py-5">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-between">
+            <div class="logo">
+                <img src="{{asset('img/clockwreknepal.png')}}" alt="ClockWrek Nepal">
+            </div>
+            <div class="contact-info">
+                <h3>About Us</h3>
+                <ul class="list-unstyled">
+                    <li>Clockwrek Nepal</li>
+                    <li>Office: Tahachal, Kathmandu</li>
+                    <li>Email: info@clockwreknepal.com</li>
+                    <li>Corporate: +977-980000000</li>
+                </ul>
+            </div>
+            <div class="social-links">
+                <h3>Social Network</h3>
+                <ul class="nav">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+            </div>
         </div>
-
-        <div class="footer-heading">
-            <h3 class="display-4">Clockwerk Nepal</h3>
-        </div>
-
-        <div class="menu">
-            <ul>
-                <li><a href="{{route('user.home',$customer->id)}}">Home</a></li>
-                <li><a href="{{route('user.profile',$customer->id)}}">Profile</a></li>
-                <li>
-                    <a href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </li>
-            </ul>
-        </div>
-
-        <div class="company-rights">
-            <p> &#169; Clockwerk Nepal All Rights Reserved </p>
-        </div>
-    </footer>
-</div>
+    </div>
+    <div class="company-rights">
+        <p> &#169; Clockwerk Nepal 2021 All Rights Reserved. </p>
+    </div>
+</footer>
 
 
 {{--footer section ends--}}

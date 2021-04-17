@@ -1,3 +1,4 @@
+a{color:#333;}
 .btn-primary{background-color:#c9660e; border-color:#c9660e;}
 .btn-primary:hover{background-color:#b35604; border-color:#b35604;}
 .btn-outline-primary, .btn-outline-primary{color:#c9660e;}
@@ -5,8 +6,6 @@
 .btn-outline-primary:hover{background-color:#c9660e; border-color:#c9660e;}
 .form-control:focus{border-color:#f8bd89; box-shadow:0 0 0 0.25rem rgb(201 102 4 / 25%)}
 0 0 0 0.25rem rgb(13 110 253 / 25%)
-a{color:#333;}
-
 
 .nav-bar-heading{
     margin-top: -22px;
@@ -15,7 +14,7 @@ a{color:#333;}
 
 .search-bar-section{
     text-align: center;
-    padding:30px 0;
+    padding:40px 0;
 }
 .site-search .search-bar{max-width:400px; width:100%;}
 
@@ -44,18 +43,16 @@ a{color:#333;}
 }
 
 .service-center-image img{
-    height: 300px;
-    width: 350px;
+    height: 275px;
+    width: 100%;
+    object-fit:cover;
 }
 
 
 /* for footer */
-.footer-section footer{
+footer.footer{
     /*position: fixed;*/
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 150px;
+    padding:20px 0;
     background-color: #1d2124;
 }
 
@@ -97,20 +94,18 @@ a{color:#333;}
     background-color: #eaf1ee;
     color: black;
 }
-
-.company-rights{
-    align-content: center;
-    width: fit-content;
-    margin: 0 auto;
-    margin-top: 61px;
-}
-
+.company-rights{margin-top:20px; padding-top:40px; border-top:1px solid #3c3c3c;}
 .company-rights p{
     text-align: center;
     color: white;
-    margin-top: 10px;
-    font-size: 10px;
+    font-size: 11.5px;
+    margin:0;
 }
+
+footer h3{font-size:18px; color:#c9660e; text-transform:uppercase; margin-bottom:20px;}
+footer .social-links i.fa{ color:#ebebeb; padding:5px 8px; font-size:22px; }
+
+footer ul li{color:#ebebeb; line-height: 1.4; padding:5px 0; font-size:16px;}
 
 /* for user profile*/
 /**/
@@ -240,10 +235,12 @@ a{color:#333;}
     border-radius: 30%;
 }
 
+.service-center-image{position:relative;}
+.rating-score{position:absolute; right:0px; bottom:0px; background-color:#268807; padding:5px 15px; }
+.rating-score .score-txt{color:#ffffff; margin-right:5px;}
+
 .service-center-description{
-    margin-left: 25px;
     margin-top: 25px;
-    width: 60%;
 }
 
 /* service center about section*/

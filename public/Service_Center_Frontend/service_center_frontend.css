@@ -1,5 +1,374 @@
-.navbar {
-    margin-bottom: 40px;
+a{color:#333;}
+textarea{width:100%; resize:none; height:180px; padding:8px; }
+.btn-primary{background-color:#c9660e; border-color:#c9660e;}
+.btn-primary:hover{background-color:#b35604; border-color:#b35604;}
+.btn-outline-primary, .btn-outline-primary{color:#c9660e;}
+.btn-outline-primary{border-color:#c9660e;}
+.btn-outline-primary:hover{background-color:#c9660e; border-color:#c9660e;}
+.form-control:focus{border-color:#f8bd89; box-shadow:0 0 0 0.25rem rgb(201 102 4 / 25%)}
+0 0 0 0.25rem rgb(13 110 253 / 25%)
+
+.nav-bar-heading{
+    margin-top: -22px;
+    color: #ffffff;
+}
+
+.search-bar-section{
+    text-align: center;
+    padding:40px 0;
+}
+.site-search .search-bar{max-width:400px; width:100%;}
+
+.search-bar{
+    width: 400px;
+    height: 42px;
+    padding:10px;
+}
+
+.service-centers{
+    margin-top: 55px;
+}
+
+.service-center-individual{
+    margin-bottom: 120px;
+}
+
+.service-center-image img{
+    height: 275px;
+    width: 100%;
+    object-fit:cover;
+}
+
+
+/* for footer */
+footer.footer{
+    /*position: fixed;*/
+    padding:20px 0;
+    background-color: #1d2124;
+}
+
+.logo{
+    float: left;
+}
+.footer-heading h3{
+    /*background-color: #00ad5f;*/
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    width: fit-content;
+}
+
+.menu{
+    margin-top: -10px;
+    float: right;
+}
+
+.menu ul{
+    text-align: right;
+    display: inline-flex;
+}
+
+.menu li{
+    display: inline-flex;
+    color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.menu li a{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
+.menu li a:hover{
+    background-color: #eaf1ee;
+    color: black;
+}
+.company-rights{margin-top:20px; padding-top:40px; border-top:1px solid #3c3c3c;}
+.company-rights p{
+    text-align: center;
+    color: white;
+    font-size: 11.5px;
+    margin:0;
+}
+
+footer h3{font-size:18px; color:#c9660e; text-transform:uppercase; margin-bottom:20px;}
+footer .social-links i.fa{ color:#ebebeb; padding:5px 8px; font-size:22px; }
+
+footer ul li{color:#ebebeb; line-height: 1.4; padding:5px 0; font-size:16px;}
+
+/* for user profile*/
+/**/
+/**/
+
+.user-profile{
+    display: block;
+}
+
+/*user Profile pop up form and buttons*/
+
+.open-button{
+    margin-right: 5px;
+}
+.open-button:hover{
+    background-color: #95c5ed;
+}
+
+.form-popup{
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.form-popup-content{
+    width: 600px;
+    max-height:700px;
+    background-color: white;
+    padding: 25px;
+    position: relative;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+.form-popup-content .item{margin-bottom: 15px;}
+.form-popup-content .item:last-child{margin-bottom: 0;}
+
+.form-popup-content label{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+.form-popup-content input{
+    padding: 8px;
+    border: 1px solid gray;
+    width: 100%;
+}
+
+.close-form {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 42px;
+    color: #333;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.close-form:hover{
+    color: #666;
+}
+
+/*user Profile pop up form and buttons ends*/
+
+.user-personal-info{
+    background-color: #ebf4e8;
+    padding:50px 0;
+}
+.user-personal-info .profile-picture{text-align: center;}
+.user-personal-info .user-info{max-width:250px;}
+
+.profile-picture img{
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    margin:0 auto;
+}
+
+.user-history{
+    padding:50px 0;
+}
+/**/
+/*
+*/
+
+/* SERVICE CENTER PROFILE USER VIEW*/
+
+.service-center-profile{
+    display: block;
+    position: relative;
+}
+.service-center-info{
+    background-color: #f6efe9;
+    padding:50px 0;
+}
+
+.display-image img {
+    height: 400px;
+    width: 400px;
+}
+.pagination{padding:20px 0; margin-bottom:20px; text-align:center;}
+.pagination span, .pagination a{display: inline-block;}
+.pagination svg{max-width:20px; width:100%;}
+
+/* service center about section*/
+
+.about-description
+.about-description p{
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    line-height:1.5;
+    color: #7e7e7e;
+    font-size:16px;
+}
+
+.about-description img{
+    max-width: 600px;
+    width:100%;
+    margin:10px auto;
+}
+
+/*review section of service center profile*/
+
+.service-center-profile .service-center-info .display-image{width:40%;}
+.service-center-profile .service-center-info .service-center-description{width:60%;}
+
+.about-service-center{padding:50px 0;}
+.service-center-reviews{padding:50px 0; background-color:#f5f5f5;}
+.reviewer-info{max-width:700px; width:100%; margin:0 auto;}
+.reviewer-info ul{padding:0; margin:0;}
+.reviewer-info ul li{list-style: none; position:relative; padding-left:125px; margin-bottom:40px;}
+.reviewer-info ul li:last-child{margin-bottom:0;}
+.reviewer-info img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    object-fit:cover;
+    position: absolute;
+    left:0;
+    top:0;
+}
+
+
+/*Service center booking pop up*/
+
+.booking-popup-form{
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index:99;
+}
+
+.open-booking{
+    text-decoration: none;
+    color: white;
+    background-color: #3495e3;
+    border-radius: 25px;
+}
+
+.booking-popup-from-content{
+    max-height: 700px;
+    width: 600px;
+    background-color: white;
+    /*text-align: center;*/
+    padding: 25px;
+    position: relative;
+    border-radius: 4px;
+}
+
+.booking-popup-from-content label{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+.booking-popup-from-content input, .booking-popup-from-content select{
+    padding: 8px;
+    border: 1px solid gray;
+    width:100%;
+}
+
+.booking-form .item{margin-bottom:20px;}
+.booking-form .item:last-child{margin-bottom:0;}
+.agree-checkbox{position: relative; padding-left:25px; margin:15px 0;}
+.agree-checkbox input[type='checkbox']{position: absolute;left:0; top:3px; width: auto;}
+.agree-checkbox label{margin-bottom: 0;}
+
+.close-booking-form {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 42px;
+    color: #333;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.agree-checkbox input{
+    padding-bottom: 0px;
+}
+
+.close-form:hover{
+    color: #666;
+}
+
+/*Service center booking pop up ends*/
+
+/*****
+*******
+**********
+*/
+/* about section user*/
+
+.about-clockwerkNepal{
+    display: block;
+    background-image: linear-gradient(to right, #baf6f5, #e5f1f1);
+    width: 100%;
+    height: 100%;
+}
+
+.about-clockwerkNepal-heading{
+    text-align: center;
+}
+
+.about-clockwerkNepal-description{
+    width: 65%;
+    margin: 0 auto;
+    background-color: #c6d8e7;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;
+    margin-bottom: 50px;
+}
+
+.about-clockwerkNepal-description p{
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+/*about section user ends*/
+
+/* user info form */
+
+.user-info-form{
+    text-align: center;
+    width: 50%;
+    margin:50px auto;
+}
+.info-form label{
+    /*display: block;*/
+    padding: 15px;
+}
+.info-form input{
+    /*display: block;*/
+    width: 70%;
+    margin: 0 auto;
+    padding: 5px;
 }
 
 .nav-bar-heading{
@@ -102,19 +471,6 @@
     color: black;
 }
 
-.company-rights{
-    align-content: center;
-    width: fit-content;
-    margin: 0 auto;
-    margin-top: 61px;
-}
-
-.company-rights p{
-    text-align: center;
-    color: white;
-    margin-top: 10px;
-    font-size: 10px;
-}
 
 /* for user profile*/
 /**/
@@ -136,26 +492,15 @@
     position: relative;
 }
 .service-center-info{
-    display: flex;
-    width: 65%;
-    margin-left: 10px;
-    margin: 0 auto;
-    margin-bottom: 50px;
+    padding:50px 0;
     background-color: #f5e9f5;
 }
 
 .display-image img {
-    margin-top: 30px;
     height: 400px;
     width: 400px;
-    border-radius: 30%;
 }
 
-.service-center-description{
-    margin-left: 25px;
-    margin-top: 25px;
-    width: 60%;
-}
 
 /* service center about section*/
 

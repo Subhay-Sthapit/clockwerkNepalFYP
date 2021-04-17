@@ -40,7 +40,7 @@
                                 </h4>
                                 <h6 style="font-style: italic">{{$service_center->address}}</h6>
                                 <h6 style="font-style: italic">{{$service_center->phone_number}}</h6>
-                                <div class="d-flex flex-wrap justify-content-between">
+                                <div class="d-flex flex-wrap justify-content-between align-items-center">
                                     <div class="rating-score">
                                         <span class="score-txt">4.0</span>
                                         <span class="fa fa-star checked"></span>

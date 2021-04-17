@@ -7,7 +7,7 @@
         <div class="service-center-info">
             <div class="container">
                 <div class="d-flex flex-wrap justify-content-between">
-                    <div class="display-image">
+                    <div class="display-image pe-5">
                         <img src="{{asset('storage/'.$service_center->display_picture)}}" alt="">
                     </div>
                     <div class="service-center-description">
@@ -35,9 +35,9 @@
                             <div class="booking-popup-from-content">
                                 <div class="close-booking-form">+</div>
                                 <h2 class="display-6 mb-3">Request a Booking</h2>
-                                <form action="#" class="booking-form">
-                                    <div class="item"><form action="{{route('booking.create',[$customer->id,$service_center->id])}}" class="booking-form" method="POST" enctype="multipart/form-data">
+                                    <form action="{{route('booking.create',[$customer->id,$service_center->id])}}" class="booking-form" method="POST" enctype="multipart/form-data">
                                     @csrf
+                                    <div class="item">
                                         <label for="booking_date">Date for booking</label>
                                         <input class="form-control" type="date" name="booking_date" id="booking_date" required>
                                     </div>

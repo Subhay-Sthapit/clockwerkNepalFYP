@@ -1,5 +1,12 @@
-.navbar {
-}
+.btn-primary{background-color:#c9660e; border-color:#c9660e;}
+.btn-primary:hover{background-color:#b35604; border-color:#b35604;}
+.btn-outline-primary, .btn-outline-primary{color:#c9660e;}
+.btn-outline-primary{border-color:#c9660e;}
+.btn-outline-primary:hover{background-color:#c9660e; border-color:#c9660e;}
+.form-control:focus{border-color:#f8bd89; box-shadow:0 0 0 0.25rem rgb(201 102 4 / 25%)}
+0 0 0 0.25rem rgb(13 110 253 / 25%)
+a{color:#333;}
+
 
 .nav-bar-heading{
     margin-top: -22px;
@@ -7,14 +14,15 @@
 }
 
 .search-bar-section{
-    margin-top: 50px;
     text-align: center;
+    padding:30px 0;
 }
+.site-search .search-bar{max-width:400px; width:100%;}
 
 .search-bar{
-    border-radius: 15px;
     width: 400px;
     height: 42px;
+    padding:10px;
 }
 .btn-success{
     height: 40px;
@@ -38,18 +46,6 @@
 .service-center-image img{
     height: 300px;
     width: 350px;
-}
-
-.btn-success{
-    border-radius: 10px;
-}
-
-.btn-primary{
-    border-radius: 10px;
-}
-
-.btn-secondary{
-    border-radius: 10px;
 }
 
 
@@ -443,6 +439,4 @@
     margin: 0 auto;
     padding: 5px;
 }
-
-
 

@@ -236,12 +236,14 @@ footer ul li{color:#ebebeb; line-height: 1.4; padding:5px 0; font-size:16px;}
 }
 
 .service-center-image{position:relative;}
-.rating-score{position:absolute; right:0px; bottom:0px; background-color:#268807; padding:5px 15px; }
-.rating-score .score-txt{color:#ffffff; margin-right:5px;}
 
 .service-center-description{
     margin-top: 25px;
 }
+
+.pagination{padding:20px 0; margin-bottom:20px; text-align:center;}
+.pagination span, .pagination a{display: inline-block;}
+.pagination svg{max-width:20px; width:100%;}
 
 /* service center about section*/
 

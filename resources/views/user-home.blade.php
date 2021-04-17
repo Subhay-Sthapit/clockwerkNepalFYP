@@ -28,14 +28,6 @@
                     <div class="col">
                         <div class="service-center-individual">
                             <div class="service-center-image">
-                                <div class="rating-score">
-                                    <span class="score-txt">4.0</span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                </div>
                                 <img src="{{asset('storage/'.$service_center->display_picture)}}" alt="">
                             </div>
                             <div class="service-center-description">
@@ -48,13 +40,25 @@
                                 </h4>
                                 <h6 style="font-style: italic">{{$service_center->address}}</h6>
                                 <h6 style="font-style: italic">{{$service_center->phone_number}}</h6>
-                                <a class="btn btn-primary" href="{{route('user.service_center_profile',[$customer->id,$service_center->id])}}">View Profile</a>
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="rating-score">
+                                        <span class="score-txt">4.0</span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <a class="btn btn-primary" href="{{route('user.service_center_profile',[$customer->id,$service_center->id])}}">View Profile</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 @endforeach
             </div>
-            {{$service_centers->links()}}
+            <div class="pagination flex-wrap justify-content-center"> 
+                {{$service_centers->links()}}
+            </div>
         </div>
     </div>
 @endsection

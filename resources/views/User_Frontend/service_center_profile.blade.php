@@ -36,7 +36,7 @@
                                 <div class="close-booking-form">+</div>
                                 <h2 class="display-6 mb-4">Request a Booking</h2>
 
-                                    <form action="{{route('booking.create',[$customer->id,$service_center->id])}}" class="booking-form" method="POST" enctype="multipart/form-data">
+                                <form action="{{route('booking.create',$customer->id)}}" class="booking-form" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="item">
                                         <label for="booking_date">Date for booking</label>

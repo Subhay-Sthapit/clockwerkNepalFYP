@@ -78,7 +78,7 @@
             </div>
             <div class="social-links">
                 <h3>Social Network</h3>
-                <ul class="nav">
+                <ul class="nav list-unstyled">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                     <li><a href="#"><i class="fa fa-youtube"></i></a></li>
                 </ul>

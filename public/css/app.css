@@ -170,7 +170,7 @@ sup {
 }
 
 a {
-  color: #3490dc;
+  color: #333333;
   text-decoration: none;
   background-color: transparent;
 }
@@ -4419,7 +4419,7 @@ input[type=button].btn-block {
 .nav-link:focus {
   text-decoration: none;
     background-color: #78bfe5;
-    border-radius: 20px;
+    border-radius:5px;
 }
 
 .nav-link.disabled {
@@ -4990,10 +4990,8 @@ input[type=button].btn-block {
 
 .home-page-container{
     background-image: linear-gradient(to right, #cface5, #bff1f1);
-    height: fit-content;
-    width: 65%;
-    margin: 50px auto;
-    padding: 5px;
+    padding: 50px 0;
+    height:calc(100vh - 88px);
 }
 
 .card-body {
@@ -10927,3 +10925,38 @@ a.text-dark:focus {
   }
 }
 
+@media (min-width: 992px){
+.navbar-toggleable-md .navbar-toggler {
+    display: none;
+}
+}
+@media (min-width: 992px){
+.navbar-toggleable-md .navbar-collapse {
+    display: -webkit-box!important;
+    display: -webkit-flex!important;
+    display: -ms-flexbox!important;
+    display: flex!important;
+    width: 100%;
+}}
+@media (min-width: 768px){
+.justify-content-md-end {
+    justify-content: flex-end!important;
+}
+.navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+}
+}
+@media (min-width: 768px){
+.justify-content-md-end {
+    -webkit-box-pack: end!important;
+    -webkit-justify-content: flex-end!important;
+    -ms-flex-pack: end!important;
+    justify-content: flex-end!important;
+}
+}
+
+.login-wrapper{
+  padding:50px 0;
+}

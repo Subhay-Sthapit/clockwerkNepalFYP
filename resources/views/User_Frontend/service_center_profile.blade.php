@@ -6,18 +6,15 @@
     <div class="service-center-profile">
         <div class="service-center-info">
             <div class="display-image">
-                <img src="{{asset('User_Frontend/images/service_center.jpg')}}" alt="">
+                <img src="{{asset('storage/'.$service_center->display_picture)}}" alt="">
             </div>
             <div class="service-center-description">
-                <h2 class="display-2">Service Center Name</h2>
-                <h4>Address,Address</h4>
-                <h5>9843551646</h5>
-                <h5>email@gmail.com</h5>
+                <h2 class="display-2">{{$user->name}}</h2>
+                <h4>{{$service_center->address}}</h4>
+                <h5>{{$service_center->phone_number}}</h5>
+                <h5>{{$user->email}}</h5>
                 <p>
-                    short description short description short description short description short description
-                    short descriptionshort descriptionshort descriptionshort descriptionshort description
-                    short description short description short description short description short description
-                    short descriptionshort descriptionshort descriptionshort descriptionshort description
+                    {{$service_center->short_description}}
                 </p>
                 <button type="button" class="btn-success" style="height: 30px">
                     3.5
@@ -79,24 +76,9 @@
             </div>
 
             <div class="about-description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>{{$service_center->long_description}}</p>
 
-                <img src="{{asset('User_Frontend/images/service_center.jpg')}}" alt="">
+                <img src="{{asset('storage/'.$service_center->description_picture)}}" alt="">
             </div>
         </div>
 

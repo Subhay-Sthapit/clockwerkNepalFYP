@@ -58,3 +58,5 @@ Route::get('customer/info-form','App\Http\Controllers\CustomerFrontendController
 // User backend routes
 
 Route::post('customer/info_form/create','App\Http\Controllers\CustomerController@create')->name('customer.create');
+
+Route::patch('customer/update/{customer}','App\Http\Controllers\CustomerController@update')->name('customer.update');

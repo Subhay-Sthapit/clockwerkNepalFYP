@@ -26,19 +26,17 @@
 
                         <div class="close-form">+</div>
                         <h2>Edit Profile</h2>
-                        <form action="#">
-                            <label for="profile_image">Edit Profile Picture</label>
-                            <input type="file" name="profile_image" id="profile_image" required>
-
-
-                            <label for="name">Name</label>
-                            <input type="text" placeholder="enter Name" name="name" id="name" required>
+                        <form action="{{route('customer.update',$customer->id)}}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @method('PATCH')
+                            <label for="profile_picture">Edit Profile Picture</label>
+                            <input type="file" name="profile_picture" id="profile_picture" required>
 
                             <label for="address">Address</label>
-                            <input type="text" placeholder="Enter Address" name="address" id="address" required>
+                            <input type="text" placeholder="Enter Address" name="address" id="address" value="{{$customer->address}}" required>
 
-                            <label for="contact_number">Contact Number</label>
-                            <input type="text" placeholder="enter Contact number" name="contact_number" id="contact_number" required>
+                            <label for="phone_number">Contact Number</label>
+                            <input type="text" placeholder="enter Contact number" name="phone_number" id="phone_number" value="{{$customer->phone_number}}" required>
 
                             <button type="submit" class="btn-success">Edit</button>
                         </form>

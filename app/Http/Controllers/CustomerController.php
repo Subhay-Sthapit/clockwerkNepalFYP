@@ -25,6 +25,14 @@ class CustomerController extends Controller
         $customer->profile_picture = $request->file('profile_picture')->store('User_images');
         $customer->save();
         return redirect()->route('user.home',$customer->id);
-
     }
+
+    public function update(Request $request, customer $customer){
+        $customer->address = $request->address;
+        $customer->phone_number = $request->phone_number;
+        $customer->profile_picture = $request->file('profile_picture')->store('User_images');
+        $customer->save();
+        return redirect()->route('user.profile',$customer->id);
+    }
+
 }

@@ -35,7 +35,8 @@
                             <div class="booking-popup-from-content">
                                 <div class="close-booking-form">+</div>
                                 <h2 class="display-6 mb-3">Request a Booking</h2>
-                                <form action="#" class="booking-form">
+                                <form action="{{route('booking.create',[$customer->id,$service_center->id])}}" class="booking-form" method="POST" enctype="multipart/form-data">
+                                    @csrf
                                     <div class="item">
                                         <label for="booking_date">Date for booking</label>
                                         <input class="form-control" type="date" name="booking_date" id="booking_date" required>

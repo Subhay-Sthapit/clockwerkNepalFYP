@@ -60,3 +60,8 @@ Route::get('customer/info-form','App\Http\Controllers\CustomerFrontendController
 Route::post('customer/info_form/create','App\Http\Controllers\CustomerController@create')->name('customer.create');
 
 Route::patch('customer/update/{customer}','App\Http\Controllers\CustomerController@update')->name('customer.update');
+
+
+// Booking route
+
+Route::post('customer/make/booking','App\Http\Controllers\BookingController@create')->name('booking.create');

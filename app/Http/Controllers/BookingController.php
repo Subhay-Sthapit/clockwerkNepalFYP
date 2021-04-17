@@ -24,9 +24,8 @@ class BookingController extends Controller
         $booking->vehicle_type = $request->vehicle_type;
         $booking->vehicle_name = $request->vehicle_name;
         $booking->booking_description = $request->booking_description;
-        $booking->booking_stauts = "pending";
+        $booking->booking_status = "pending";
         $booking->save();
         return redirect()->route('user.service_center_profile',[$customer->id,$service_center->id]);
-
     }
 }

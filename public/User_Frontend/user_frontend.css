@@ -119,37 +119,36 @@ footer ul li{color:#ebebeb; line-height: 1.4; padding:5px 0; font-size:16px;}
     background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     display: none;
     justify-content: center;
     align-items: center;
+    z-index: 999;
 }
 
 .form-popup-content{
-    height: 600px;
-    width: 500px;
+    width: 600px;
+    max-height:700px;
     background-color: white;
-    text-align: center;
-    padding: 20px;
+    padding: 25px;
     position: relative;
     border-radius: 4px;
     background-color: #ffffff;
 }
+.form-popup-content .item{margin-bottom: 15px;}
+.form-popup-content .item:last-child{margin-bottom: 0;}
 
 .form-popup-content label{
-    margin: 15px auto;
     display: block;
-    width: 50%;
-    padding: 8px;
+    margin-bottom: 5px;
+    font-size: 13px;
 }
 .form-popup-content input{
-    margin: 15px auto;
-    display: block;
-    width: 50%;
     padding: 8px;
     border: 1px solid gray;
+    width: 100%;
 }
 
 .close-form {
@@ -279,10 +278,6 @@ footer ul li{color:#ebebeb; line-height: 1.4; padding:5px 0; font-size:16px;}
     padding: 25px;
     position: relative;
     border-radius: 4px;
-}
-.booking-popup-from-content h2{
-    text-align: center;
-    padding: 7px;
 }
 
 .booking-popup-from-content label{

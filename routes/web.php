@@ -51,7 +51,7 @@ Route::get('customer/home/{customer}','App\Http\Controllers\CustomerFrontendCont
 
 Route::get('customer/profile/{customer}','App\Http\Controllers\CustomerFrontendController@user_profile')->name('user.profile')->middleware('IsUser');
 
-Route::get('customer/service-center-profile/{customer}','App\Http\Controllers\CustomerFrontendController@service_center_profile')->name('user.service_center_profile')->middleware('IsUser');
+Route::get('customer/service-center-profile/{customer}/{service_center}','App\Http\Controllers\CustomerFrontendController@service_center_profile')->name('user.service_center_profile')->middleware('IsUser');
 
 Route::get('customer/info-form','App\Http\Controllers\CustomerFrontendController@user_info_form')->name('user.info_form')->middleware('IsUser');
 

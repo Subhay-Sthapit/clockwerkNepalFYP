@@ -37,23 +37,23 @@
                                 <h2 class="display-6 mb-3">Request a Booking</h2>
                                 <form action="#" class="booking-form">
                                     <div class="item">
-                                        <label for="date">Date for booking</label>
-                                        <input class="form-control" type="date" name="date" id="date" required>
+                                        <label for="booking_date">Date for booking</label>
+                                        <input class="form-control" type="date" name="booking_date" id="booking_date" required>
                                     </div>
                                     <div class="item">
-                                        <label for="vehicle-type">Type of vehicle</label>
-                                        <select class="form-control" name="vehicle-type" id="vehicle-type">
+                                        <label for="vehicle_type">Type of vehicle</label>
+                                        <select class="form-control" name="vehicle_type" id="vehicle_type">
                                             <option selected>Two-Wheeler</option>
                                             <option>Four-Wheeler</option>
                                         </select>
                                     </div>
                                     <div class="item">
-                                        <label for="vehicle-name">Vehicle Name</label>
-                                        <input class="form-control" type="text" name="vehicle-name" id="vehicle-name" placeholder="eg. honda shine" required>
+                                        <label for="vehicle_name">Vehicle Name</label>
+                                        <input class="form-control" type="text" name="vehicle_name" id="vehicle_name" placeholder="eg. honda shine" required>
                                     </div>
                                     <div class="item">
-                                        <label for="description">Description for booking:</label>
-                                        <textarea class="form-control" type="text" name="description" id="description" placeholder="enter description for booking e.g. what problems you have in your vehicle , etc." required></textarea>
+                                        <label for="booking_description">Description for booking:</label>
+                                        <textarea class="form-control" type="text" name="booking_description" id="booking_description" placeholder="enter description for booking e.g. what problems you have in your vehicle , etc." required></textarea>
                                     </div>
                                     <div class="agree-checkbox">
                                         <input type="checkbox" id="agreeToTerms" name="agreeToTerms" required>

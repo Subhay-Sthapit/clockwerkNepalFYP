@@ -11,18 +11,18 @@ class CustomerController extends Controller
 {
     //
 
-    public function create_customer_info(Request $request, User $user){
-        $validatedData = $request->validate([
-            'profile_picture'=>'required|file',
-            'address'=>'required|string',
-            'phone_number'=>'required|numeric',
-        ]);
+    public function create(Request $request){
+//        $validatedData = $request->validate([
+//            'profile_picture'=>'required|file',
+//            'address'=>'required|string',
+//            'phone_number'=>'required|numeric',
+//        ]);
 
-        $customer = DB::table('customer')->get();
-        $customer->user_id = $user->id;
+        $customer = new customer();
+        $customer->user_id = auth()->user()->getAuthIdentifier();
         $customer->address = $request->address;
         $customer->phone_number = $request->phone_number;
-        $customer->profile_picture = $request->profile_picture->store('public/User_images');
+        $customer->profile_picture = $request->file('profile_picture')->store('User_images');
         $customer->save();
         return redirect()->route('user.home',$customer->id);
 

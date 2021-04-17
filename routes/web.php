@@ -47,10 +47,14 @@ Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'AdminHome
 
 // User Frontend Routes
 
-Route::get('user/home/{customer}','App\Http\Controllers\UserFrontendController@user_home')->name('user.home')->middleware('IsUser');
+Route::get('customer/home/{customer}','App\Http\Controllers\CustomerFrontendController@user_home')->name('user.home')->middleware('IsUser');
 
-Route::get('user/profile/{customer}','App\Http\Controllers\UserFrontendController@user_profile')->name('user.profile')->middleware('IsUser');
+Route::get('customer/profile/{customer}','App\Http\Controllers\CustomerFrontendController@user_profile')->name('user.profile')->middleware('IsUser');
 
-Route::get('user/service-center-profile/{customer}','App\Http\Controllers\UserFrontendController@service_center_profile')->name('user.service_center_profile')->middleware('IsUser');
+Route::get('customer/service-center-profile/{customer}','App\Http\Controllers\CustomerFrontendController@service_center_profile')->name('user.service_center_profile')->middleware('IsUser');
 
-Route::get('user/info-form','App\Http\Controllers\UserFrontendController@user_info_form')->name('user.info_form')->middleware('IsUser');
+Route::get('customer/info-form','App\Http\Controllers\CustomerFrontendController@user_info_form')->name('user.info_form')->middleware('IsUser');
+
+// User backend routes
+
+Route::post('customer/info_form/create','App\Http\Controllers\CustomerController@create')->name('customer.create');

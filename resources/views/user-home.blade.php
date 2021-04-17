@@ -28,7 +28,6 @@
                     <div class="col">
                         <div class="service-center-individual">
                             <div class="service-center-image">
-                                <img src="{{asset('User_Frontend/images/service_center.jpg')}}" alt="">
                                 <div class="rating-score">
                                     <span class="score-txt">4.0</span>
                                     <span class="fa fa-star checked"></span>
@@ -37,6 +36,7 @@
                                     <span class="fa fa-star checked"></span>
                                     <span class="fa fa-star"></span>
                                 </div>
+                                <img src="{{asset('storage/'.$service_center->display_picture)}}" alt="">
                             </div>
                             <div class="service-center-description">
                                 <h4>
@@ -54,6 +54,7 @@
                     </div>
                 @endforeach
             </div>
+            {{$service_centers->links()}}
         </div>
     </div>
 @endsection

@@ -40,21 +40,21 @@
                         <div class="close-booking-form">+</div>
                         <h2>Request a Booking</h2>
                         <form action="#" class="booking-form">
-                            <label for="date">Date for booking</label>
-                            <input type="date" name="date" id="date" required>
+                            <label for="booking_date">Date for booking</label>
+                            <input type="date" name="booking_date" id="booking_date" required>
                             <br>
-                            <label for="vehicle-type">Type of vehicle</label>
-                            <select name="vehicle-type" id="vehicle-type">
+                            <label for="vehicle_type">Type of vehicle</label>
+                            <select name="vehicle_type" id="vehicle_type">
                                 <option selected>Two-Wheeler</option>
                                 <option>Four-Wheeler</option>
                             </select>
                             <br>
-                            <label for="vehicle-name">Vehicle Name</label>
-                            <input type="text" name="vehicle-name" id="vehicle-name" placeholder="eg. honda shine" required>
+                            <label for="vehicle_name">Vehicle Name</label>
+                            <input type="text" name="vehicle_name" id="vehicle_name" placeholder="eg. honda shine" required>
                             <br>
-                            <label for="description">Description for booking:</label>
+                            <label for="booking_description">Description for booking:</label>
                             <br>
-                            <textarea type="text" name="description" id="description" placeholder="enter description for booking e.g. what problems you have in your vehicle , etc." cols="30" rows="10" required></textarea>
+                            <textarea type="text" name="booking_description" id="booking_description" placeholder="enter description for booking e.g. what problems you have in your vehicle , etc." cols="30" rows="10" required></textarea>
                             <br>
                             <div class="agree-checkbox">
                                 <input type="checkbox" id="agreeToTerms" name="agreeToTerms" required>

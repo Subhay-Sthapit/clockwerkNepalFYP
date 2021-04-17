@@ -19,4 +19,9 @@ class customer extends Model
     public function user(){
         return $this->belongsTo('App\Models\user');
     }
+
+    public function bookings(){
+        return $this->hasMany(booking::class);
+    }
+
 }

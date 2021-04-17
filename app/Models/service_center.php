@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\booking;
 
 class service_center extends Model
 {
@@ -25,5 +26,9 @@ class service_center extends Model
 
     public function user(){
         return $this->belongsTo('App\Models\user');
+    }
+
+    public function bookings(){
+        return $this->belongsTo(booking::class);
     }
 }

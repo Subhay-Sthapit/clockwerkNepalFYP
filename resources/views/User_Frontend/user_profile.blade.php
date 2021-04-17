@@ -17,19 +17,25 @@
                         <div class="form-popup">
                             <div class="form-popup-content">
                                 <div class="close-form">+</div>
-                                <h2>Edit Profile</h2>
+                                <h2 class="display-6 mb-4">Edit Profile</h2>
                                 <form action="{{route('customer.update',$customer->id)}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('PATCH')
-                                    <label for="profile_picture">Edit Profile Picture</label>
-                                    <input type="file" name="profile_picture" id="profile_picture" required>
-
-                                    <label for="address">Address</label>
-                                    <input type="text" placeholder="Enter Address" name="address" id="address" value="{{$customer->address}}" required>
-
-                                    <label for="phone_number">Contact Number</label>
-                                    <input type="text" placeholder="enter Contact number" name="phone_number" id="phone_number" value="{{$customer->phone_number}}" required>
-                                    <button type="submit" class="btn-success">Edit</button>
+                                    <div class="item">
+                                        <label for="profile_picture">Edit Profile Picture</label>
+                                        <input class="form-control" type="file" name="profile_picture" id="profile_picture" required>
+                                    </div>
+                                    <div class="item">
+                                        <label for="address">Address</label>
+                                        <input class="form-control" type="text" placeholder="Enter Address" name="address" id="address" value="{{$customer->address}}" required>
+                                    </div>
+                                    <div class="item">
+                                        <label for="phone_number">Contact Number</label>
+                                        <input class="form-control" type="text" placeholder="enter Contact number" name="phone_number" id="phone_number" value="{{$customer->phone_number}}" required>
+                                    </div>
+                                    <div class="item">
+                                        <button type="submit" style="width: 200px" class="btn btn-success">Edit</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>

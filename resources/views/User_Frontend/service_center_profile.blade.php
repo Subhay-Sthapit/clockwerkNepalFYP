@@ -34,7 +34,7 @@
                         <div class="booking-popup-form">
                             <div class="booking-popup-from-content">
                                 <div class="close-booking-form">+</div>
-                                <h2 class="display-6 mb-3">Request a Booking</h2>
+                                <h2 class="display-6 mb-4">Request a Booking</h2>
 
                                     <form action="{{route('booking.create',[$customer->id,$service_center->id])}}" class="booking-form" method="POST" enctype="multipart/form-data">
                                     @csrf
@@ -57,11 +57,15 @@
                                         <label for="booking_description">Description for booking:</label>
                                         <textarea class="form-control" type="text" name="booking_description" id="booking_description" placeholder="enter description for booking e.g. what problems you have in your vehicle , etc." required></textarea>
                                     </div>
-                                    <div class="agree-checkbox">
-                                        <input type="checkbox" id="agreeToTerms" name="agreeToTerms" required>
-                                        <label for="agreeToTerms">I agree that my contact info is shared with the service center for making the booking.</label>
+                                    <div class="item">
+                                        <div class="agree-checkbox">
+                                            <input type="checkbox" id="agreeToTerms" name="agreeToTerms" required>
+                                            <label for="agreeToTerms">I agree that my contact info is shared with the service center for making the booking.</label>
+                                        </div>
                                     </div>
-                                    <button type="submit" class="btn btn-success" style="width: 200px">Request Booking</button>
+                                    <div class="item">
+                                        <button type="submit" class="btn btn-success" style="width: 200px">Request Booking</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>

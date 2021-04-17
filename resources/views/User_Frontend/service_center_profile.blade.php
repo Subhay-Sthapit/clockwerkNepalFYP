@@ -11,7 +11,7 @@
                         <img src="{{asset('storage/'.$service_center->display_picture)}}" alt="">
                     </div>
                     <div class="service-center-description">
-                        <h2 class="display-5">{{$user->name}}</h2>
+                        <h2 class="display-5 mb-5">{{$user->name}}</h2>
                         <h4>{{$service_center->address}}</h4>
                         <h5>{{$service_center->phone_number}}</h5>
                         <h5>{{$user->email}}</h5>
@@ -35,9 +35,9 @@
                             <div class="booking-popup-from-content">
                                 <div class="close-booking-form">+</div>
                                 <h2 class="display-6 mb-3">Request a Booking</h2>
-                                <form action="{{route('booking.create',[$customer->id,$service_center->id])}}" class="booking-form" method="POST" enctype="multipart/form-data">
+                                <form action="#" class="booking-form">
+                                    <div class="item"><form action="{{route('booking.create',[$customer->id,$service_center->id])}}" class="booking-form" method="POST" enctype="multipart/form-data">
                                     @csrf
-                                    <div class="item">
                                         <label for="booking_date">Date for booking</label>
                                         <input class="form-control" type="date" name="booking_date" id="booking_date" required>
                                     </div>
@@ -72,12 +72,10 @@
         <div class="about-service-center">
             <div class="container">
                 <div class="heading">
-                    <h2 class="display-5 mb-4 text-center">About</h2>
+                    <h2 class="display-5 mb-5 text-center">About</h2>
                 </div>
-
                 <div class="about-description">
                     <p>{{$service_center->long_description}}</p>
-
                     <img src="{{asset('storage/'.$service_center->description_picture)}}" alt="">
                 </div>
             </div>
@@ -86,7 +84,7 @@
         <div class="service-center-reviews">
             <div class="container">
                 <div class="heading">
-                    <h2 class="display-5 mb-4 text-center">Reviews By Clients</h2>
+                    <h2 class="display-5 mb-5 text-center">Reviews By Clients</h2>
                 </div>
                 <div class="reviewer-info">
                     <ul>

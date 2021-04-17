@@ -35,7 +35,7 @@
                     <a class="nav-link" href="{{route('service-center.home',$service_center->id)}}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Booking</a>
+                    <a class="nav-link" href="{{route('service-center.bookings',$service_center->id)}}">Booking</a>
                 </li>
                 {{--                <li class="nav-item">--}}
                 {{--                    <a class="nav-link disabled" href="#">Disabled</a>--}}
@@ -80,7 +80,7 @@
         <div class="menu">
             <ul>
                 <li><a href="{{route('service-center.home',$service_center->id)}}">Home</a></li>
-                <li><a href="#">Bookings</a></li>
+                <li><a href="{{route('service-center.bookings',$service_center->id)}}">Bookings</a></li>
                 <li><a href="#">Settings</a></li>
                 <li>
                     <a href="{{ route('logout') }}"

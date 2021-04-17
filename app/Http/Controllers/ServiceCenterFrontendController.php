@@ -16,4 +16,9 @@ class ServiceCenterFrontendController extends Controller
     public function service_center_info_form(){
         return view('Service_Center_Frontend/service_center_info_form');
     }
+
+    public function service_center_bookings(service_center $service_center){
+        return view('Service_Center_Frontend/service_center_bookings',['service_center'=>$service_center]);
+    }
+
 }

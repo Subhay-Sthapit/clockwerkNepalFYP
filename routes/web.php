@@ -32,6 +32,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // service center routes
 Route::get('service-center/home/{service_center}', 'App\Http\Controllers\ServiceCenterFrontendController@service_center_home')->name('service-center.home')->middleware('IsServiceCenter');
 
+Route::get('service-center/bookings/{service_center}', 'App\Http\Controllers\ServiceCenterFrontendController@service_center_bookings')->name('service-center.bookings')->middleware('IsServiceCenter');
+
 Route::get('service-center/info_form', 'App\Http\Controllers\ServiceCenterFrontendController@service_center_info_form')->name('service-center.info_form')->middleware('IsServiceCenter');
 
 // service center backend routes
@@ -64,4 +66,4 @@ Route::patch('customer/update/{customer}','App\Http\Controllers\CustomerControll
 
 // Booking route
 
-Route::post('customer/make/booking','App\Http\Controllers\BookingController@create')->name('booking.create');
+Route::post('customer/make/booking/{customer}/{service_center}','App\Http\Controllers\BookingController@create')->name('booking.create');

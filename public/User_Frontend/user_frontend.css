@@ -169,26 +169,17 @@ footer ul li{color:#ebebeb; line-height: 1.4; padding:5px 0; font-size:16px;}
 /*user Profile pop up form and buttons ends*/
 
 .user-personal-info{
-    /*text-align: center;*/
-    text-align: center;
-    margin: 0 auto;
-    margin-bottom: 50px;
-    /*margin-left: 50%;*/
-    background-color: #e2e0e0;
-    height: 400px;
-    width: 25%;
+    background-color: #ebf4e8;
+    padding:50px 0;
 }
-
-.user-personal-info:hover{
-    background-color: #a1e9bc;
-}
+.user-personal-info .profile-picture{text-align: center;}
+.user-personal-info .user-info{max-width:250px;}
 
 .profile-picture img{
     border-radius: 50%;
     width: 200px;
     height: 200px;
-    margin-top: 65px;
-    margin-bottom: 15px;
+    margin:0 auto;
 }
 
 .user-history{

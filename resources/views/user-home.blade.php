@@ -16,13 +16,9 @@
             </form>
         </div>
     </div>
-
-    <div class="heading">
-        <h1 class="display-6">Vehicle Service Centers Available For You</h1>
-    </div>
-
     <div class="service-centers">
         <div class="container">
+            <h1 class="display-6 mb-5 text-center">Vehicle Service Centers Available For You</h1>
             <div class="row row-cols-3">
                 @foreach($service_centers as $service_center)
                     <div class="col">

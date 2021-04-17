@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body  class="d-flex flex-column h-100">
+<body class="d-flex flex-column h-100">
     <div id="app">
         <header class="site-header bg-white shadow-sm">
             <div class="container">

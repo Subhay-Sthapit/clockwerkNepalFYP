@@ -27,12 +27,14 @@ class CustomerFrontendController extends Controller
 
     public function service_center_profile(customer $customer, service_center $service_center){
         $users = DB::table('users')->get();
+        $reviews = DB::table('reviews')->paginate(2);
+        $customers = DB::table('customers')->get();
         foreach ($users as $user){
             if ($user->id == $service_center->user_id){
                 $passing_user = $user;
             }
         }
-        return view('User_Frontend/service_center_profile',['customer'=>$customer,'service_center'=>$service_center,'user'=>$passing_user]);
+        return view('User_Frontend/service_center_profile',['customer'=>$customer,'service_center'=>$service_center,'user'=>$passing_user,'reviews'=>$reviews,'customers'=>$customers,'users'=>$users]);
     }
 
     public function user_info_form(){

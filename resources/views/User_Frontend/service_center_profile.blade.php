@@ -1,6 +1,23 @@
 @extends('layouts.user_master')
 @section('title','Service Center Profile')
 @section('content')
+    @if(session()->has('message'))
+        <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
+            {{session('message')}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">x</span>
+            </button>
+        </div>
+    @endif
+
+    @if(session()->has('error'))
+        <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
+            {{session('error')}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">x</span>
+            </button>
+        </div>
+    @endif
 
 
     <div class="service-center-profile">
@@ -77,24 +94,24 @@
                                 <div class="heading">
                                     <h2 class="display-6 mb-4">Write a Review</h2>
                                 </div>
-                                <form action="#" class="review-form" method="POST" enctype="multipart/form-data">
+                                <form action="{{route('review.create',[$customer->id,$service_center->id])}}" class="review-form" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="item">
-                                        <label for="booking_description"><i class="fa fa-star checked"></i> Rate:</label>
-                                        <select>
+                                        <label for="rating"><i class="fa fa-star checked"></i> Rate:</label>
+                                        <select name="rating" id="rating">
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
                                             <option>4</option>
-                                            <option>5</option>
+                                            <option selected>5</option>
                                         </select>
                                     </div>
                                     <div class="item">
-                                        <label for="booking_description">Message:</label>
-                                        <textarea rows="5" class="form-control" type="text" name="booking_description" id="booking_description" placeholder="enter description for booking e.g. what problems you have in your vehicle , etc." required></textarea>
+                                        <label for="review">Message:</label>
+                                        <textarea rows="5" class="form-control" type="text" name="review" id="review" placeholder="Wrtie a review for the service center" required></textarea>
                                     </div>
                                     <div class="item">
-                                        <button type="submit" class="btn btn-success" style="width: 200px">Request Booking</button>
+                                        <button type="submit" class="btn btn-success" style="width: 200px">Submit review</button>
                                     </div>
                                 </form>
                             </div>
@@ -123,38 +140,60 @@
                 </div>
                 <div class="reviewer-info">
                     <ul>
-                        <li>
-                            <img src="{{asset('User_Frontend/images/user_profile_pictures/user_profile_picture.jpg')}}" alt="">
-                            <h5>Mukesh</h5>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <p>
-                                yo tah khatra po cha nih thaha cha tmi lai solit
-                                yo tah khatra po cha nih thaha cha tmi lai solit
-                                yo tah khatra po cha nih thaha cha tmi lai solit
-                                yo tah khatra po cha nih thaha cha tmi lai solit
-                            </p>
-                        </li>
-
-                        <li>
-                            <img src="{{asset('User_Frontend/images/user_profile_pictures/user_profile_picture.jpg')}}" alt="">
-                            <h5>Mukesh</h5>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <p>
-                                yo tah khatra po cha nih thaha cha tmi lai solit
-                                yo tah khatra po cha nih thaha cha tmi lai solit
-                                yo tah khatra po cha nih thaha cha tmi lai solit
-                                yo tah khatra po cha nih thaha cha tmi lai solit
-                            </p>
-                        </li>
+                        @foreach($reviews as $review)
+                            @if($review->service_center_id == $service_center->id)
+                                <li>
+                                    @foreach($customers as $cus)
+                                        @if($review->customer_id == $cus->id)
+                                            <img src="{{asset('storage/'.$cus->profile_picture)}}" alt="">
+                                            @foreach($users as $use)
+                                                @if($use->id == $cus->user_id)
+                                                    <h5>{{$use->name}}</h5>
+                                                    @if($review->rating == 1)
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    @elseif($review->rating == 2)
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    @elseif($review->rating == 3)
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    @elseif($review->rating == 4)
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    @elseif($review->rating == 5)
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    @endif
+                                                    <p>
+                                                       {{$review->review}}
+                                                    </p>
+                                                @endif
+                                            @endforeach
+                                        @endif
+                                    @endforeach
+                                </li>
+                            @endif
+                            @endforeach
                     </ul>
+                    <div class="pagination flex-wrap justify-content-center">
+                        {{$reviews->links()}}
+                    </div>
                 </div>
             </div>
         </div>

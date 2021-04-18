@@ -24,4 +24,8 @@ class customer extends Model
         return $this->hasMany(booking::class);
     }
 
+    public function reviews(){
+        return $this->hasMany(review::class);
+    }
+
 }

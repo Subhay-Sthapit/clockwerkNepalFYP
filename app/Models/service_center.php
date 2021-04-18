@@ -29,6 +29,10 @@ class service_center extends Model
     }
 
     public function bookings(){
-        return $this->belongsTo(booking::class);
+        return $this->hasMany(booking::class);
+    }
+
+    public function reviews(){
+        return $this->hasMany(review::class);
     }
 }

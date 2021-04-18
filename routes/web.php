@@ -71,3 +71,7 @@ Route::post('customer/make/booking/{customer}/{service_center}','App\Http\Contro
 Route::patch('service_center/accept/booking/{booking}','App\Http\Controllers\BookingController@accept_booking')->name('booking.accept');
 
 Route::patch('service_center/decline/booking/{booking}','App\Http\Controllers\BookingController@decline_booking')->name('booking.decline');
+
+// review route
+
+Route::post('customer/make/booking/{customer}/{service_center}','App\Http\Controllers\ReviewController@create')->name('review.create');

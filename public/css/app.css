@@ -179,6 +179,8 @@ a:hover {
   color: #1d68a7;
   text-decoration: underline;
 }
+a{color:#333;}
+textarea{width:100%; resize:none; height:180px; padding:8px; }
 
 a:not([href]):not([class]) {
   color: inherit;
@@ -2668,21 +2670,21 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #3490dc;
-  border-color: #3490dc;
+  background-color: #c9660e;
+  border-color: #c9660e;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #227dc7;
-  border-color: #2176bd;
+  background-color: #b35604;
+  border-color: #b35604;
 }
 
 .btn-primary:focus,
 .btn-primary.focus {
   color: #fff;
-  background-color: #227dc7;
-  border-color: #2176bd;
+  background-color: #b35604;
+  border-color: #b35604;
   box-shadow: 0 0 0 0.2rem rgba(82, 161, 225, 0.5);
 }
 
@@ -2697,8 +2699,8 @@ fieldset:disabled a.btn {
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #2176bd;
-  border-color: #1f6fb2;
+  background-color: #b35604;
+  border-color: #b35604;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus,
@@ -2995,14 +2997,13 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-primary {
-  color: #3490dc;
-  border-color: #3490dc;
+  border-color: #b35604;
 }
 
 .btn-outline-primary:hover {
   color: #fff;
-  background-color: #3490dc;
-  border-color: #3490dc;
+  background-color: #b35604;
+  border-color: #b35604;
 }
 
 .btn-outline-primary:focus,
@@ -10990,11 +10991,33 @@ a.text-dark:focus {
 .info-form label{display: block; margin-bottom:5px; font-size: 13px;}
 .info-form input[type='text']{width:100%;}
 .info-form button.btn{width:100%;}
-
 .user-info-form .custom-file-upload{margin-bottom: 30px;}
+
+/*Custom File Upload*/
 .custom-file-upload input[type='file']{display:none;}
 .custom-file-upload label{width:150px; height:150px; border:1px solid #38c172; overflow: hidden; position: relative;  cursor: pointer; background-color:#c9660e; margin:0 auto; display: block; border-radius:50%; -webkit-border-radius:50%; -ms-border-radius:50%;}
 .custom-file-upload label:after{content:''; position:absolute; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.5);}
 .custom-file-upload label .fa-user-circle{font-size:150px; color:#ffffff;}
 .custom-file-upload label .fa-camera{  position:absolute; z-index:9; left:50%; top:50%; transform:translate(-50%, -50%); font-size:25px; color:#ffffff;}
-#file-path{margin-top:10px; font-size:14px;}
+.file-path{margin-top:10px; font-size:14px;}
+/*Custom File Upload*/
+
+/*Service Center Info Form*/
+.service-center-info-form{padding:50px 0}
+/*Service Center Info Form*/
+
+/*Form Styles*/
+form .item{margin-bottom: 15px;}
+form .item:last-child{margin-bottom: 0;}
+
+form .item label{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+form .item input, form .item textarea{
+    padding: 8px;
+    border: 1px solid gray;
+    width: 100%;
+}
+/*Form Styles*/

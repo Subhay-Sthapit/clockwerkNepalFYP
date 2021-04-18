@@ -22,6 +22,17 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+
+
+    {{--    Text Editor CSS--}}
+    <link rel="stylesheet" href="{{asset('css/richtext.css')}}">
+    {{--    Text Editor JS--}}
+    <script type="text/javascript" src="{{asset('js/jquery.richtext.js')}}"></script>
+    <script>
+        jQuery(document).ready(function() {
+            jQuery('.content').richText();
+        });
+    </script>
 </head>
 <body class="d-flex flex-column h-100">
     <div id="app">
@@ -72,6 +83,11 @@
                                 </form>
                             </div>
                         </li>
+{{--                        <li>--}}
+{{--                            @if(\Illuminate\Support\Facades\Auth::user()->user_type == 'service center')--}}
+{{--                                <a href="{{route('service-center.home')}}"></a>--}}
+{{--                            @endif--}}
+{{--                        </li>--}}
                     @endguest
                             </ul>
                         </div>

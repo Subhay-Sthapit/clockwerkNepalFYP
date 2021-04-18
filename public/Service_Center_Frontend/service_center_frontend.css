@@ -6,7 +6,7 @@ textarea{width:100%; resize:none; height:180px; padding:8px; }
 .btn-outline-primary{border-color:#c9660e;}
 .btn-outline-primary:hover{background-color:#c9660e; border-color:#c9660e;}
 .form-control:focus{border-color:#f8bd89; box-shadow:0 0 0 0.25rem rgb(201 102 4 / 25%)}
-0 0 0 0.25rem rgb(13 110 253 / 25%)
+.fa-star.checked{color:#c9660e;}
 
 .nav-bar-heading{
     margin-top: -22px;
@@ -223,6 +223,7 @@ footer ul li{color:#ebebeb; line-height: 1.4; padding:5px 0; font-size:16px;}
     max-width: 600px;
     width:100%;
     margin:10px auto;
+    display: block;
 }
 
 /*review section of service center profile*/
@@ -350,7 +351,6 @@ footer ul li{color:#ebebeb; line-height: 1.4; padding:5px 0; font-size:16px;}
     margin: 0 auto;
 }
 
-
 /*about section user ends*/
 
 /* user info form */
@@ -385,16 +385,6 @@ footer ul li{color:#ebebeb; line-height: 1.4; padding:5px 0; font-size:16px;}
     width: 400px;
     height: 42px;
 }
-.btn-success{
-    height: 40px;
-    width: 100px;
-    margin-left: 20px;
-}
-
-.heading{
-    text-align: center;
-    margin-top: 40px;
-}
 
 .service-centers{
     margin-top: 55px;
@@ -408,19 +398,6 @@ footer ul li{color:#ebebeb; line-height: 1.4; padding:5px 0; font-size:16px;}
     height: 300px;
     width: 350px;
 }
-
-.btn-success{
-    border-radius: 10px;
-}
-
-.btn-primary{
-    border-radius: 10px;
-}
-
-.btn-secondary{
-    border-radius: 10px;
-}
-
 
 /* for footer */
 .footer-section footer{
@@ -483,8 +460,6 @@ footer ul li{color:#ebebeb; line-height: 1.4; padding:5px 0; font-size:16px;}
 
 /*Service Center Profile pop up form and buttons*/
 
-
-
 /* SERVICE CENTER PROFILE USER VIEW*/
 
 .service-center-profile{
@@ -501,13 +476,10 @@ footer ul li{color:#ebebeb; line-height: 1.4; padding:5px 0; font-size:16px;}
     width: 400px;
 }
 
-
 /* service center about section*/
 
 .about-service-center{
-    width: 65%;
-    margin: 0 auto;
-    margin-bottom: 50px;
+    padding:50px 0;
     background-color: #d2cfcf;
 }
 
@@ -517,21 +489,11 @@ footer ul li{color:#ebebeb; line-height: 1.4; padding:5px 0; font-size:16px;}
     margin: 0 auto;
 }
 
-.about-description img{
-    text-align: center;
-    height: 500px;
-    width: 600px;
-    margin-left: 20%
+.booking-history{
+    padding:50px 0;
 }
 
 /*review section of service center profile*/
-
-.service-center-reviews{
-    display: block;
-    width: 65%;
-    margin: 0 auto;
-    margin-bottom: 50px;;
-}
 
 .service-center-reviews h2{
     text-align: center;
@@ -548,31 +510,35 @@ footer ul li{color:#ebebeb; line-height: 1.4; padding:5px 0; font-size:16px;}
     margin: 0 auto;
 }
 
-.reviewer-info ul{
-    background-color: #b8d8f1;
-    width: fit-content;
-}
-
-.reviewer-info ul li{
-    margin-left: -31px;
-    background-color: #b8d8f1;
-    width: inherit;
-    list-style-type: none;
-    margin-bottom: 20px;
-}
-
-.reviewer-info ul li:hover{
-    background-color: #c8f5f5;
-}
-
 .checked {
     color: orange;
 }
 
-
-
-
 /*Service center  pop up*/
+
+.form-popup{
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.form-popup-content{
+    width: 600px;
+    max-height:700px;
+    padding: 25px;
+    position: relative;
+    border-radius: 4px;
+    background-color: #ffffff;
+    overflow-Y:auto;
+    overflow-X:hidden;
+}
 
 .service-center-profile-edit-popup-form{
     background-color: rgba(0, 0, 0, 0.6);
@@ -650,5 +616,14 @@ footer ul li{color:#ebebeb; line-height: 1.4; padding:5px 0; font-size:16px;}
 
 /*Service center  pop up ends*/
 
+
+/*Custom File Upload*/
+.custom-file-upload input[type='file']{display:none;}
+.custom-file-upload label{width:150px; height:150px; border:1px solid #38c172; overflow: hidden; position: relative;  cursor: pointer; background-color:#c9660e; margin:0 auto; display: block; border-radius:50%; -webkit-border-radius:50%; -ms-border-radius:50%;}
+.custom-file-upload label:after{content:''; position:absolute; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.5);}
+.custom-file-upload label .fa-user-circle{font-size:150px; color:#ffffff;}
+.custom-file-upload label .fa-camera{  position:absolute; z-index:9; left:50%; top:50%; transform:translate(-50%, -50%); font-size:25px; color:#ffffff;}
+.file-path{margin-top:10px; font-size:14px;}
+/*Custom File Upload*/
 
 

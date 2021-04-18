@@ -26,7 +26,7 @@
                                     <div class="item text-center custom-file-upload">
                                         <label for="profile_picture"><i class="fa fa-user-circle"></i><i class="fa fa-camera"></i></label>
                                         <input class="form-control" type="file" name="profile_picture" id="profile_picture" required>
-                                        <h4 id="file-path"></h4>
+                                        <h4 id="file-path text-center"></h4>
                                     </div>
                                     <div class="item">
                                         <label for="address">Address</label>
@@ -98,9 +98,11 @@
     </div>
     <script>
         jQuery(document).ready(function(){
-            $('#profile_picture').on('change', function(){
-                var profilePicInputData = jQuery('#profile_picture').val();
-                $('#file-path').text(profilePicInputData);
+            jQuery("div.custom-file-upload").each(function(){
+                jQuery(this).find("input[type='file']").on('change', function(){
+                    var dataPath = jQuery(this).val();
+                    jQuery(this).parents('.custom-file-upload').find('.file-path').text(dataPath);
+                });
             });
         });
     </script>

@@ -74,4 +74,4 @@ Route::patch('service_center/decline/booking/{booking}','App\Http\Controllers\Bo
 
 // review route
 
-Route::post('customer/make/booking/{customer}/{service_center}','App\Http\Controllers\ReviewController@create')->name('review.create');
+Route::post('customer/make/review/{customer}/{service_center}','App\Http\Controllers\ReviewController@create')->name('review.create');

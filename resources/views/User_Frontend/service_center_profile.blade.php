@@ -28,7 +28,7 @@
                                 <span class="fa fa-star"></span>
                             </div>
                             <button id="open-booking" type="button" class="btn btn-primary me-2">Make a Booking</button>
-                            <a href="#" class="btn btn-outline-primary">Write a Review <i class="fa fa-comment"></i></a>
+                            <a href="#" id="open-review" class="btn btn-outline-primary">Write a Review <i class="fa fa-comment"></i></a>
                         </div>
                         {{--                    booking pop up form --}}
                         <div class="booking-popup-form">
@@ -70,6 +70,36 @@
                             </div>
                         </div>
                         {{--                    booking pop up form ends --}}
+                        {{--                    Review pop up form --}}
+                        <div class="popup-form review-popup-form">
+                            <div class="popup-form-content booking-popup-from-content">
+                                <div class="close-form close-review-form">+</div>
+                                <div class="heading">
+                                    <h2 class="display-6 mb-4">Write a Review</h2>
+                                </div>
+                                <form action="#" class="review-form" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="item">
+                                        <label for="booking_description"><i class="fa fa-star checked"></i> Rate:</label>
+                                        <select>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                    <div class="item">
+                                        <label for="booking_description">Message:</label>
+                                        <textarea rows="5" class="form-control" type="text" name="booking_description" id="booking_description" placeholder="enter description for booking e.g. what problems you have in your vehicle , etc." required></textarea>
+                                    </div>
+                                    <div class="item">
+                                        <button type="submit" class="btn btn-success" style="width: 200px">Request Booking</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        {{--                    Review pop up form ends --}}
                     </div>
                 </div>
             </div>

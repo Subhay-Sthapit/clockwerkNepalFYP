@@ -67,3 +67,7 @@ Route::patch('customer/update/{customer}','App\Http\Controllers\CustomerControll
 // Booking route
 
 Route::post('customer/make/booking/{customer}/{service_center}','App\Http\Controllers\BookingController@create')->name('booking.create');
+
+Route::patch('service_center/accept/booking/{booking}','App\Http\Controllers\BookingController@accept_booking')->name('booking.accept');
+
+Route::patch('service_center/decline/booking/{booking}','App\Http\Controllers\BookingController@decline_booking')->name('booking.decline');

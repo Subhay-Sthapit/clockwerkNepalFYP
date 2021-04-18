@@ -51,40 +51,42 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th scope="col">SN</th>
                     <th scope="col">Booking Date</th>
                     <th scope="col">Service Center Name</th>
+                    <th scope="col">Vehicle type</th>
+                    <th scope="col">Vehicle name</th>
                     <th scope="col">Status</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>01/02/2021</td>
-                    <td>Makalu Service Center</td>
-                    <td>
-                        Success
-                        <i class="fa fa-check" style="color:green;"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>01/02/2021</td>
-                    <td>Makalu Service Center</td>
-                    <td>
-                        Cancelled
-                        <i class="fa fa-times" style="color:red;"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>01/02/2021</td>
-                    <td>Makalu Service Center</td>
-                    <td>
-                        Pending
-                        <i class="fa fa-clock-o"></i>
-                    </td>
-                </tr>
+                @foreach($bookings as $booking )
+                    @if($booking->customer_id == $customer->id)
+                        <tr>
+                            <td>{{$booking->booking_date}}</td>
+                            @foreach($service_centers as $service_center)
+                                @if($service_center->id == $booking->service_center_id)
+                                    @foreach($users as $user)
+                                        @if($service_center->user_id == $user->id)
+                                            <td>{{$user->name}}</td>
+                                        @endif
+                                    @endforeach
+                                @endif
+                            @endforeach
+                            <td>{{$booking->vehicle_type}}</td>
+                            <td>{{$booking->vehicle_name}}</td>
+                            <td>
+                                {{$booking->booking_status}}
+                                @if($booking->booking_status == 'success')
+                                    <i class="fa fa-check" style="color:green;"></i>
+                                @elseif($booking->booking_status == 'cancelled')
+                                    <i class="fa fa-times" style="color:red;"></i>
+                                @else
+                                    <i class="fa fa-clock-o"></i>
+                                    @endif
+                            </td>
+                        </tr>
+                    @endif
+                @endforeach
                 </tbody>
             </table>
         </div>

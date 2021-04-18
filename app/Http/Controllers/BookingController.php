@@ -25,4 +25,16 @@ class BookingController extends Controller
         $booking->save();
         return redirect()->route('user.service_center_profile',[$customer->id,$service_center->id]);
     }
+
+    public function accept_booking(booking $booking){
+        $booking->booking_status = 'success';
+        $booking->save();
+        return back();
+    }
+
+    public function decline_booking(booking $booking){
+        $booking->booking_status = 'cancelled';
+        $booking->save();
+        return back();
+    }
 }

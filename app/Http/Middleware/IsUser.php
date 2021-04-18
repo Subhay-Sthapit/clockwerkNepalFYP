@@ -18,15 +18,13 @@ class IsUser
      */
     public function handle(Request $request, Closure $next)
     {
-        $customers = DB::table('customers')->get();
         if (Auth::check()) {
-            foreach ($customers as $customer)
-            {
-                if (auth()->user()->user_type == "user" && auth()->user()->getAuthIdentifier() == $customer->user_id){
-                    return $next($request);
-                }
+            if (auth()->user()->user_type == "user") {
+                return $next($request);
             }
+        }else{
+            return route('login');
         }
-        return redirect('/')->with('error',"You don't have user access.");
+        return redirect('/')->with('error',"You don't have service center access.");
     }
 }

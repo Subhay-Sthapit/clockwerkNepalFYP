@@ -12,8 +12,6 @@ class BookingController extends Controller
     //
 
     public function create(Request $request, customer $customer, service_center $service_center){
-
-
         $booking = new booking();
         $booking->customer_id = $customer->id;
         $booking->service_center_id = $service_center->id;
@@ -23,7 +21,7 @@ class BookingController extends Controller
         $booking->booking_description = $request->booking_description;
         $booking->booking_status = "pending";
         $booking->save();
-        return redirect()->route('user.service_center_profile',[$customer->id,$service_center->id]);
+        return back();
     }
 
     public function accept_booking(booking $booking){

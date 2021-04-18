@@ -17,13 +17,16 @@
                         <div class="form-popup">
                             <div class="form-popup-content">
                                 <div class="close-form">+</div>
-                                <h2 class="display-6 mb-4">Edit Profile</h2>
+                                <div class="heading">
+                                    <h2 class="display-6 text-center mb-4">Edit Profile</h2>
+                                </div>
                                 <form action="{{route('customer.update',$customer->id)}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('PATCH')
-                                    <div class="item">
-                                        <label for="profile_picture">Edit Profile Picture</label>
+                                    <div class="item text-center custom-file-upload">
+                                        <label for="profile_picture"><i class="fa fa-user-circle"></i><i class="fa fa-camera"></i></label>
                                         <input class="form-control" type="file" name="profile_picture" id="profile_picture" required>
+                                        <h4 id="file-path"></h4>
                                     </div>
                                     <div class="item">
                                         <label for="address">Address</label>
@@ -47,7 +50,9 @@
     </div>
     <div class="user-history">
         <div class="container">
-            <h4 class="display-5 mb-5 text-center">Booking History</h4>
+            <div class="heading">
+                <h4 class="display-5 mb-5 text-center">Booking History</h4>
+            </div>
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -91,4 +96,13 @@
             </table>
         </div>
     </div>
+    <script>
+        jQuery(document).ready(function(){
+            $('#profile_picture').on('change', function(){
+                var profilePicInputData = jQuery('#profile_picture').val();
+                $('#file-path').text(profilePicInputData);
+            });
+        });
+    </script>
 @endsection
+

@@ -4984,15 +4984,33 @@ input[type=button].btn-block {
 
 .about-section{
     text-align: center;
-    width: 70%;
-    margin: 0 auto;
 }
 
 .home-page-container{
-    background-image: linear-gradient(to right, #cface5, #bff1f1);
+    /*background-image: linear-gradient(to right, #cface5, #bff1f1);*/
     padding: 50px 0;
     height:calc(100vh - 88px);
+    background:url('../img/clockwerknepalbackgtound.jpg') no-repeat center center;
+    background-size:cover;
+    position:relative;
 }
+
+.hero-content{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.hero-content .container{
+    padding-top:50px;
+}
+
+.hero-content .container .heading h3{color:#ffffff;}
+.hero-content .container .about-section p{color:#ffffff; font-size:18px;}
 
 .card-body {
   flex: 1 1 auto;
@@ -10926,37 +10944,57 @@ a.text-dark:focus {
 }
 
 @media (min-width: 992px){
-.navbar-toggleable-md .navbar-toggler {
-    display: none;
-}
+    .navbar-toggleable-md .navbar-toggler {
+        display: none;
+    }
 }
 @media (min-width: 992px){
-.navbar-toggleable-md .navbar-collapse {
-    display: -webkit-box!important;
-    display: -webkit-flex!important;
-    display: -ms-flexbox!important;
-    display: flex!important;
-    width: 100%;
-}}
-@media (min-width: 768px){
-.justify-content-md-end {
-    justify-content: flex-end!important;
-}
-.navbar-collapse {
-    flex-basis: 100%;
-    flex-grow: 1;
-    align-items: center;
-}
+    .navbar-toggleable-md .navbar-collapse {
+        display: -webkit-box!important;
+        display: -webkit-flex!important;
+        display: -ms-flexbox!important;
+        display: flex!important;
+        width: 100%;
+    }
 }
 @media (min-width: 768px){
-.justify-content-md-end {
-    -webkit-box-pack: end!important;
-    -webkit-justify-content: flex-end!important;
-    -ms-flex-pack: end!important;
-    justify-content: flex-end!important;
+    .justify-content-md-end {
+        justify-content: flex-end!important;
+    }
+    .navbar-collapse {
+        flex-basis: 100%;
+        flex-grow: 1;
+        align-items: center;
+    }
 }
+@media (min-width: 768px){
+    .justify-content-md-end {
+        -webkit-box-pack: end!important;
+        -webkit-justify-content: flex-end!important;
+        -ms-flex-pack: end!important;
+        justify-content: flex-end!important;
+    }
 }
 
 .login-wrapper{
   padding:50px 0;
 }
+
+.user-info-form{
+    padding:50px 0;
+}
+
+.info-form{max-width:400px; width:100%; margin:0 auto;}
+.info-form .item{margin-bottom: 15px;}
+.info-form .item:last-child{margin-bottom:0;}
+.info-form label{display: block; margin-bottom:5px; font-size: 13px;}
+.info-form input[type='text']{width:100%;}
+.info-form button.btn{width:100%;}
+
+.user-info-form .custom-file-upload{margin-bottom: 30px;}
+.custom-file-upload input[type='file']{display:none;}
+.custom-file-upload label{width:150px; height:150px; border:1px solid #38c172; overflow: hidden; position: relative;  cursor: pointer; background-color:#c9660e; margin:0 auto; display: block; border-radius:50%; -webkit-border-radius:50%; -ms-border-radius:50%;}
+.custom-file-upload label:after{content:''; position:absolute; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.5);}
+.custom-file-upload label .fa-user-circle{font-size:150px; color:#ffffff;}
+.custom-file-upload label .fa-camera{  position:absolute; z-index:9; left:50%; top:50%; transform:translate(-50%, -50%); font-size:25px; color:#ffffff;}
+#file-path{margin-top:10px; font-size:14px;}

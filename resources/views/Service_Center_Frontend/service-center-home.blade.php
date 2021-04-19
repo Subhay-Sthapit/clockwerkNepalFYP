@@ -96,7 +96,7 @@
                 <div class="reviewer-info">
                     <ul>
                         @foreach($reviews as $review)
-                            @if($review->service_center_id == $service_center->id)
+
                                 <li>
                                     @foreach($customers as $cus)
                                         @if($review->customer_id == $cus->id)
@@ -143,7 +143,7 @@
                                         @endif
                                     @endforeach
                                 </li>
-                            @endif
+
                         @endforeach
                     </ul>
                 </div>

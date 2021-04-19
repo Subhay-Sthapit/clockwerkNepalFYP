@@ -27,7 +27,7 @@ class CustomerFrontendController extends Controller
 
     public function service_center_profile(customer $customer, service_center $service_center){
         $users = DB::table('users')->get();
-        $reviews = DB::table('reviews')->paginate(2);
+        $reviews = DB::table('reviews')->where('service_center_id',$service_center->id)->paginate(2);
         $customers = DB::table('customers')->get();
         foreach ($users as $user){
             if ($user->id == $service_center->user_id){

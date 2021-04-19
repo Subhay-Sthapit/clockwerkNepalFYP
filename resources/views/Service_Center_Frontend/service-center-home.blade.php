@@ -95,37 +95,60 @@
                 </div>
                 <div class="reviewer-info">
                     <ul>
-                        <li>
-                            <img src="{{asset('User_Frontend/images/user_profile_pictures/user_profile_picture.jpg')}}" alt="">
-                            <h5>Mukesh</h5>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <p>
-                                yo tah khatra po cha nih thaha cha tmi lai solit
-                                yo tah khatra po cha nih thaha cha tmi lai solit
-                                yo tah khatra po cha nih thaha cha tmi lai solit
-                                yo tah khatra po cha nih thaha cha tmi lai solit
-                            </p>
-                        </li>
-                        <li>
-                            <img src="{{asset('User_Frontend/images/user_profile_pictures/user_profile_picture.jpg')}}" alt="">
-                            <h5>Mukesh</h5>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <p>
-                                yo tah khatra po cha nih thaha cha tmi lai solit
-                                yo tah khatra po cha nih thaha cha tmi lai solit
-                                yo tah khatra po cha nih thaha cha tmi lai solit
-                                yo tah khatra po cha nih thaha cha tmi lai solit
-                            </p>
-                        </li>
+                        @foreach($reviews as $review)
+                            @if($review->service_center_id == $service_center->id)
+                                <li>
+                                    @foreach($customers as $cus)
+                                        @if($review->customer_id == $cus->id)
+                                            <img src="{{asset('storage/'.$cus->profile_picture)}}" alt="">
+                                            @foreach($users as $use)
+                                                @if($use->id == $cus->user_id)
+                                                    <h5>{{$use->name}}</h5>
+                                                    @if($review->rating == 1)
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    @elseif($review->rating == 2)
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    @elseif($review->rating == 3)
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    @elseif($review->rating == 4)
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    @elseif($review->rating == 5)
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    @endif
+                                                    <p>
+                                                        {{$review->review}}
+                                                    </p>
+                                                @endif
+                                            @endforeach
+                                        @endif
+                                    @endforeach
+                                </li>
+                            @endif
+                        @endforeach
                     </ul>
+                </div>
+                <div class="pagination flex-wrap justify-content-center">
+                    {{$reviews->links()}}
                 </div>
             </div>
         </div>

@@ -11,7 +11,10 @@ class ServiceCenterFrontendController extends Controller
 {
 
     public function service_center_home(service_center $service_center){
-        return view('Service_Center_Frontend/service-center-home',['service_center'=>$service_center]);
+        $reviews = DB::table('reviews')->paginate(2);
+        $customers = DB::table('customers')->get();
+        $users = DB::table('users')->get();
+        return view('Service_Center_Frontend/service-center-home',['service_center'=>$service_center,'reviews'=>$reviews,'customers'=>$customers,'users'=>$users]);
     }
 
     public function service_center_info_form(){

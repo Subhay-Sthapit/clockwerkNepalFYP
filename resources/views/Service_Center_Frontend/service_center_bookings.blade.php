@@ -51,20 +51,24 @@
                             </td>
                             <td>
                                 @if($booking->booking_status == 'pending')
-                                    <form style="display: inline-block" method="post" action="{{route('booking.accept',$booking->id)}}" enctype="multipart/form-data">
+                                    <form style="display: inline-block" method="post" action="{{route('booking.accept',$booking->id)}}"
+                                          enctype="multipart/form-data">
                                         @csrf
                                         @method('PATCH')
-                                        <button class="btn btn-success btn-sm rounded-0" type="submit" data-toggle="tooltip" data-placement="top" title="Accept"><i class="fa fa-check"></i></button>
+                                        <button class="btn btn-success btn-sm rounded-0" type="submit" data-toggle="tooltip"
+                                                data-placement="top" title="Accept"><i class="fa fa-check"></i></button>
                                     </form>
                                 @endif
                             </td>
 
                             <td>
                                 @if($booking->booking_status == 'pending')
-                                    <form style="display: inline-block" method="post" action="{{route('booking.decline',$booking->id)}}" enctype="multipart/form-data">
+                                    <form style="display: inline-block" method="post" action="{{route('booking.decline',$booking->id)}}"
+                                          enctype="multipart/form-data">
                                         @csrf
                                         @method('PATCH')
-                                        <button class="btn btn-danger btn-sm rounded-0" type="submit" data-toggle="tooltip" data-placement="top" title="Accept"><i class="fa fa-trash"></i></button>
+                                        <button class="btn btn-danger btn-sm rounded-0" type="submit" data-toggle="tooltip"
+                                                data-placement="top" title="Accept"><i class="fa fa-trash"></i></button>
                                     </form>
                                 @endif
                             </td>

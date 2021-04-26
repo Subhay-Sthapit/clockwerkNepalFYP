@@ -14,7 +14,8 @@ class ServiceCenterFrontendController extends Controller
         $reviews = DB::table('reviews')->where('service_center_id',$service_center->id)->paginate(2);
         $customers = DB::table('customers')->get();
         $users = DB::table('users')->get();
-        return view('Service_Center_Frontend/service-center-home',['service_center'=>$service_center,'reviews'=>$reviews,'customers'=>$customers,'users'=>$users]);
+        return view('Service_Center_Frontend/service-center-home',
+            ['service_center'=>$service_center,'reviews'=>$reviews,'customers'=>$customers,'users'=>$users]);
     }
 
     public function service_center_info_form(){
@@ -25,7 +26,8 @@ class ServiceCenterFrontendController extends Controller
         $users = DB::table('users')->get();
         $customers = DB::table('customers')->get();
         $bookings = DB::table('bookings')->get();
-        return view('Service_Center_Frontend/service_center_bookings',['service_center'=>$service_center,'users'=>$users,'customers'=>$customers,'bookings'=>$bookings]);
+        return view('Service_Center_Frontend/service_center_bookings',
+            ['service_center'=>$service_center,'users'=>$users,'customers'=>$customers,'bookings'=>$bookings]);
     }
 
 }

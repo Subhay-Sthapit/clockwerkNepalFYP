@@ -12,15 +12,6 @@ class ServiceCenterController extends Controller
 {
     public function create(Request $request): \Illuminate\Http\RedirectResponse
     {
-//        $validatedData = $request->validate([
-//            'address'=>'required',
-//            'phone_number'=>'required|numeric',
-//            'display_picture'=>'required|file',
-//            'description_picture'=>'required|file',
-//            'short_description'=>'required',
-//            'long_description'=>'required',
-//        ]);
-
         $service_center = new service_center();
         $service_center->user_id = auth()->user()->getAuthIdentifier();
         $service_center->display_picture = $request->file('display_picture')->store('service_center_images');
@@ -43,6 +34,7 @@ class ServiceCenterController extends Controller
         $service_center->description_picture = $request->file('description_picture')->store('service_center_images');
         $service_center->long_description = $request->long_description;
         $service_center->save();
+        $request->session()->flash('message','Profile Edited');
         return redirect()->route('service-center.home',$service_center->id);
     }
 

@@ -45,7 +45,8 @@
                                 <span class="fa fa-star"></span>
                             </div>
                             <button id="open-booking" type="button" class="btn btn-primary me-2">Make a Booking</button>
-                            <a href="#" id="open-review" class="btn btn-outline-primary">Write a Review <i class="fa fa-comment"></i></a>
+                            <a href="#" id="open-review" class="btn btn-outline-primary">Write a Review
+                                <i class="fa fa-comment"></i></a>
                         </div>
                         {{--                    booking pop up form --}}
                         <div class="booking-popup-form">
@@ -53,7 +54,8 @@
                                 <div class="close-booking-form">+</div>
                                 <h2 class="display-6 mb-4">Request a Booking</h2>
 
-                                <form action="{{route('booking.create',[$customer->id,$service_center->id])}}" class="booking-form" method="POST" enctype="multipart/form-data">
+                                <form action="{{route('booking.create',[$customer->id,$service_center->id])}}"
+                                      class="booking-form" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="item">
                                         <label for="booking_date">Date for booking</label>
@@ -68,16 +70,22 @@
                                     </div>
                                     <div class="item">
                                         <label for="vehicle_name">Vehicle Name</label>
-                                        <input class="form-control" type="text" name="vehicle_name" id="vehicle_name" placeholder="eg. honda shine" required>
+                                        <input class="form-control" type="text" name="vehicle_name" id="vehicle_name"
+                                               placeholder="eg. honda shine" required>
                                     </div>
                                     <div class="item">
                                         <label for="booking_description">Description for booking:</label>
-                                        <textarea class="form-control" type="text" name="booking_description" id="booking_description" placeholder="enter description for booking e.g. what problems you have in your vehicle , etc." required></textarea>
+                                        <textarea class="form-control" type="text" name="booking_description"
+                                                  id="booking_description"
+                                                  placeholder="enter description for booking e.g. what problems you have in your vehicle , etc."
+                                                  required></textarea>
                                     </div>
                                     <div class="item">
                                         <div class="agree-checkbox">
                                             <input type="checkbox" id="agreeToTerms" name="agreeToTerms" required>
-                                            <label for="agreeToTerms">I agree that my contact info is shared with the service center for making the booking.</label>
+                                            <label for="agreeToTerms">
+                                                I agree that my contact info is shared with
+                                                the service center for making the booking.</label>
                                         </div>
                                     </div>
                                     <div class="item">
@@ -94,7 +102,8 @@
                                 <div class="heading">
                                     <h2 class="display-6 mb-4">Write a Review</h2>
                                 </div>
-                                <form action="{{route('review.create',[$customer->id,$service_center->id])}}" class="review-form" method="POST" enctype="multipart/form-data">
+                                <form action="{{route('review.create',[$customer->id,$service_center->id])}}" class="review-form" method="POST"
+                                      enctype="multipart/form-data">
                                     @csrf
                                     <div class="item">
                                         <label for="rating"><i class="fa fa-star checked"></i> Rate:</label>
@@ -108,7 +117,8 @@
                                     </div>
                                     <div class="item">
                                         <label for="review">Message:</label>
-                                        <textarea rows="5" class="form-control" type="text" name="review" id="review" placeholder="Wrtie a review for the service center" required></textarea>
+                                        <textarea rows="5" class="form-control" type="text" name="review" id="review"
+                                                  placeholder="Wrtie a review for the service center" required></textarea>
                                     </div>
                                     <div class="item">
                                         <button type="submit" class="btn btn-success" style="width: 200px">Submit review</button>

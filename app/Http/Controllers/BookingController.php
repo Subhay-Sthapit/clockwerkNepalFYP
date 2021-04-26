@@ -20,6 +20,7 @@ class BookingController extends Controller
         $booking->vehicle_name = $request->vehicle_name;
         $booking->booking_description = $request->booking_description;
         $booking->booking_status = "pending";
+        $request->session()->flash('message','Request For booking Submitted');
         $booking->save();
         return back();
     }

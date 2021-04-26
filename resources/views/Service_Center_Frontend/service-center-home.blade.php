@@ -1,6 +1,14 @@
 @extends('layouts.service_center_master')
 @section('title','Service Center Homepage')
 @section('content')
+    @if(session()->has('message'))
+        <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
+            {{session('message')}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">x</span>
+            </button>
+        </div>
+    @endif
     <div class="service-center-profile">
         <div class="service-center-info">
             <div class="container">
@@ -35,34 +43,43 @@
                                 <div class="heading">
                                     <h2 class="display-6 text-center mb-5">Edit Your Profile</h2>
                                 </div>
-                                <form action="{{route('service-center.update',$service_center->id)}}" method="POST" enctype="multipart/form-data">
+                                <form action="{{route('service-center.update',$service_center->id)}}" method="POST"
+                                      enctype="multipart/form-data">
                                     @csrf
                                     @method('PATCH')
                                     <div class="item custom-file-upload">
                                         <label for="display_picture"><i class="fa fa-user-circle"></i><i class="fa fa-camera"></i></label>
-                                        <input type="file" name="display_picture" id="display_picture" value="{{asset('storage/'.$service_center->display_picture)}}" required>
+                                        <input type="file" name="display_picture" id="display_picture"
+                                               value="{{asset('storage/'.$service_center->display_picture)}}" required>
                                         <h4 class="file-path text-center"></h4>
                                     </div>
                                     <div class="item">
                                         <label for="address">Address</label>
-                                        <input type="text" name="address" id="address" placeholder="Enter Address" value="{{$service_center->address}}" required>
+                                        <input type="text" name="address" id="address" placeholder="Enter Address"
+                                               value="{{$service_center->address}}" required>
                                     </div>
                                     <div class="item">
                                         <label for="phone_number">Contact Number</label>
-                                        <input type="text" name="phone_number" id="phone_number" placeholder="Enter Phone Number" value="{{$service_center->phone_number}}" required>
+                                        <input type="text" name="phone_number" id="phone_number"
+                                               placeholder="Enter Phone Number" value="{{$service_center->phone_number}}" required>
                                     </div>
                                     <div class="item">
                                         <label for="short_description">Short Description of Company</label>
-                                        <textarea type="text" name="short_description" id="short_description" placeholder="enter short description of the company" cols="30" rows="10" required>{{$service_center->short_description}}</textarea>
+                                        <textarea type="text" name="short_description" id="short_description"
+                                                  placeholder="enter short description of the company" cols="30" rows="10"
+                                                  required>{{$service_center->short_description}}</textarea>
                                     </div>
                                     <div class="item custom-file-upload">
-                                        <label for="description_picture"><i class="fa fa-user-circle"></i><i class="fa fa-camera"></i></label>
+                                        <label for="description_picture"><i class="fa fa-user-circle"></i>
+                                            <i class="fa fa-camera"></i></label>
                                         <input type="file" name="description_picture" id="description_picture" required>
                                         <h4 class="file-path text-center"></h4>
                                     </div>
                                     <div class="item">
                                         <label for="long_description">Long Description of company</label>
-                                        <textarea type="text" name="long_description" id="long_description" placeholder="enter long description of the company" cols="60" rows="10" required>{{$service_center->long_description}}</textarea>
+                                        <textarea type="text" name="long_description" id="long_description"
+                                                  placeholder="enter long description of the company" cols="60" rows="10"
+                                                  required>{{$service_center->long_description}}</textarea>
                                     </div>
                                     <div class="item">
                                         <button type="submit" class="btn btn-success" style="width: 150px">Submit Changes</button>

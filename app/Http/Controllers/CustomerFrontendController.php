@@ -22,7 +22,8 @@ class CustomerFrontendController extends Controller
         $users = DB::table('users')->get();
         $service_centers = DB::table('service_centers')->get();
         $bookings = DB::table('bookings')->get();
-        return view('User_Frontend/user_profile',['customer'=>$customer,'bookings'=>$bookings,'users'=>$users,'service_centers'=>$service_centers]);
+        return view('User_Frontend/user_profile',
+            ['customer'=>$customer,'bookings'=>$bookings,'users'=>$users,'service_centers'=>$service_centers]);
     }
 
     public function service_center_profile(customer $customer, service_center $service_center){
@@ -34,7 +35,9 @@ class CustomerFrontendController extends Controller
                 $passing_user = $user;
             }
         }
-        return view('User_Frontend/service_center_profile',['customer'=>$customer,'service_center'=>$service_center,'user'=>$passing_user,'reviews'=>$reviews,'customers'=>$customers,'users'=>$users]);
+        return view('User_Frontend/service_center_profile',
+            ['customer'=>$customer,'service_center'=>$service_center,
+                'user'=>$passing_user,'reviews'=>$reviews,'customers'=>$customers,'users'=>$users]);
     }
 
     public function user_info_form(){

@@ -32,6 +32,7 @@ class CustomerController extends Controller
         $customer->phone_number = $request->phone_number;
         $customer->profile_picture = $request->file('profile_picture')->store('User_images');
         $customer->save();
+        $request->session()->flash('message','Profile Updated');
         return redirect()->route('user.profile',$customer->id);
     }
 

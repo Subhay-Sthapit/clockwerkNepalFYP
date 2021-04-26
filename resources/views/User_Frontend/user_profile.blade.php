@@ -1,6 +1,14 @@
 @extends('layouts.user_master')
 @section('title','Profile')
 @section('content')
+    @if(session()->has('message'))
+        <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
+            {{session('message')}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">x</span>
+            </button>
+        </div>
+    @endif
     <div class="user-profile">
         <div class="user-personal-info">
             <div class="container">
@@ -30,11 +38,13 @@
                                     </div>
                                     <div class="item">
                                         <label for="address">Address</label>
-                                        <input class="form-control" type="text" placeholder="Enter Address" name="address" id="address" value="{{$customer->address}}" required>
+                                        <input class="form-control" type="text" placeholder="Enter Address" name="address" id="address"
+                                               value="{{$customer->address}}" required>
                                     </div>
                                     <div class="item">
                                         <label for="phone_number">Contact Number</label>
-                                        <input class="form-control" type="text" placeholder="enter Contact number" name="phone_number" id="phone_number" value="{{$customer->phone_number}}" required>
+                                        <input class="form-control" type="text" placeholder="enter Contact number" name="phone_number" id="phone_number"
+                                               value="{{$customer->phone_number}}" required>
                                     </div>
                                     <div class="item">
                                         <button type="submit" style="width: 200px" class="btn btn-success">Edit</button>

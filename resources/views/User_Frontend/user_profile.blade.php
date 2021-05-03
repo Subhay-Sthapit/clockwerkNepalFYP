@@ -68,6 +68,7 @@
                 <tr>
                     <th scope="col">Booking Date</th>
                     <th scope="col">Service Center Name</th>
+                    <th scope="col">Service Center Email</th>
                     <th scope="col">Vehicle type</th>
                     <th scope="col">Vehicle name</th>
                     <th scope="col">Status</th>
@@ -75,7 +76,6 @@
                 </thead>
                 <tbody>
                 @foreach($bookings as $booking )
-                    @if($booking->customer_id == $customer->id)
                         <tr>
                             <td>{{$booking->booking_date}}</td>
                             @foreach($service_centers as $service_center)
@@ -83,6 +83,7 @@
                                     @foreach($users as $user)
                                         @if($service_center->user_id == $user->id)
                                             <td>{{$user->name}}</td>
+                                            <td>{{$user->email}}</td>
                                         @endif
                                     @endforeach
                                 @endif
@@ -100,10 +101,12 @@
                                     @endif
                             </td>
                         </tr>
-                    @endif
                 @endforeach
                 </tbody>
             </table>
+            <div class="pagination flex-wrap justify-content-center">
+                {{$bookings->links()}}
+            </div>
         </div>
     </div>
     <script>

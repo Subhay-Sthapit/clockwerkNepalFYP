@@ -19,10 +19,10 @@ class CustomerFrontendController extends Controller
                 $users = DB::table('users')->where('name','LIKE','%'.$request->search.'%')->get();
                 $searching_by = "name";
                 if (count($users)>0){
-                    $service_centers = DB::table('service_centers')->paginate(10);
+                    $service_centers = DB::table('service_centers')->get();
                 }else{
                     $users = DB::table('users')->where('user_type','=','service center')->get(['id','name']);
-                    $service_centers = DB::table('service_centers')->where('address','LIKE','%'.$request->search.'%')->paginate(10);
+                    $service_centers = DB::table('service_centers')->where('address','LIKE','%'.$request->search.'%')->get();
                     $searching_by = "address";
                 }
             }else{
@@ -35,9 +35,9 @@ class CustomerFrontendController extends Controller
     }
 
     public function user_profile(customer $customer){
-        $users = DB::table('users')->get();
+        $users = DB::table('users')->get(['id','name','email']);
         $service_centers = DB::table('service_centers')->get();
-        $bookings = DB::table('bookings')->get();
+        $bookings = DB::table('bookings')->where('customer_id','=',$customer->id)->paginate(6);
         return view('User_Frontend/user_profile',
             ['customer'=>$customer,'bookings'=>$bookings,'users'=>$users,'service_centers'=>$service_centers]);
     }

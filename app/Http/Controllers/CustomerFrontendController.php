@@ -7,15 +7,31 @@ use App\Models\service_center;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use function Sodium\add;
 
 class CustomerFrontendController extends Controller
 {
     //
 
-    public function user_home(customer $customer){
-        $users = DB::table('users')->get();
-        $service_centers = DB::table('service_centers')->paginate(6);
-        return view('user-home',['customer'=>$customer,'service_centers'=>$service_centers,'users'=>$users]);
+    public function user_home(customer $customer,Request $request){
+
+            if (!is_null($request->search)){
+                $users = DB::table('users')->where('name','LIKE','%'.$request->search.'%')->get();
+                $searching_by = "name";
+                if (count($users)>0){
+                    $service_centers = DB::table('service_centers')->paginate(10);
+                }else{
+                    $users = DB::table('users')->where('user_type','=','service center')->get(['id','name']);
+                    $service_centers = DB::table('service_centers')->where('address','LIKE','%'.$request->search.'%')->paginate(10);
+                    $searching_by = "address";
+                }
+            }else{
+                $users = DB::table('users')->where('user_type','=','service center')->get(['id','name']);
+                $service_centers = DB::table('service_centers')->paginate(6);
+                $searching_by = "none";
+            }
+
+        return view('user-home',['customer'=>$customer,'service_centers'=>$service_centers,'users'=>$users,'searching_by'=>$searching_by]);
     }
 
     public function user_profile(customer $customer){

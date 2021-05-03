@@ -49,7 +49,7 @@ Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'AdminHome
 
 // User Frontend Routes
 
-Route::get('customer/home/{customer}','App\Http\Controllers\CustomerFrontendController@user_home')->name('user.home')->middleware('IsUser');
+Route::match(['get','post'],'customer/home/{customer}/{search?}','App\Http\Controllers\CustomerFrontendController@user_home')->name('user.home')->middleware('IsUser');
 
 Route::get('customer/profile/{customer}','App\Http\Controllers\CustomerFrontendController@user_profile')->name('user.profile')->middleware('IsUser');
 

@@ -3,9 +3,10 @@
 @section('content')
     <div class="search-bar-section">
         <div class="container">
-            <form action="#" class="site-search d-flex flex-wrap justify-content-center">
-                <input type="text" class="form-control search-bar me-2" placeholder="Search Service Center">
-                <button type="button" class="btn btn-primary">
+            <form action="{{route('user.home',$customer->id)}}" method="post" class="site-search d-flex flex-wrap justify-content-center" enctype="multipart/form-data">
+                @csrf
+                <input type="text" class="form-control search-bar me-2" placeholder="Search Service Center" name="search" id="search">
+                <button type="submit" class="btn btn-primary">
                     Search
                     <svg xmlns="http://www.w3.org/2000/svg" height="10pt" version="1.1" viewBox="-1 0 136 136.21852"
                          width="10pt" id="fi_1086933">
@@ -21,38 +22,73 @@
         <div class="container">
             <h1 class="display-6 mb-5 text-center">Vehicle Service Centers Available For You</h1>
             <div class="row row-cols-3">
-                @foreach($service_centers as $service_center)
-                    <div class="col">
-                        <div class="service-center-individual">
-                            <div class="service-center-image">
-                                <img src="{{asset('storage/'.$service_center->display_picture)}}" alt="">
-                            </div>
-                            <div class="service-center-description">
-                                <h4>
-                                    @foreach($users as $user)
-                                        @if($user->id == $service_center->user_id)
-                                            {{$user->name}}
-                                        @endif
-                                    @endforeach
-                                </h4>
-                                <h6 style="font-style: italic">{{$service_center->address}}</h6>
-                                <h6 style="font-style: italic">{{$service_center->phone_number}}</h6>
-                                <div class="d-flex flex-wrap justify-content-between align-items-center">
-                                    <div class="rating-score">
-                                        <span class="score-txt">4.0</span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star"></span>
+                @if($searching_by == "name")
+                    @foreach($service_centers as $service_center)
+                        @foreach($users as $user)
+                            @if($user->id == $service_center->user_id)
+                                <div class="col">
+                                    <div class="service-center-individual">
+                                        <div class="service-center-image">
+                                            <img src="{{asset('storage/'.$service_center->display_picture)}}" alt="">
+                                        </div>
+                                        <div class="service-center-description">
+                                            <h4>
+                                                        {{$user->name}}
+                                            </h4>
+                                            <h6 style="font-style: italic">{{$service_center->address}}</h6>
+                                            <h6 style="font-style: italic">{{$service_center->phone_number}}</h6>
+                                            <div class="d-flex flex-wrap justify-content-between align-items-center">
+                                                <div class="rating-score">
+                                                    <span class="score-txt">4.0</span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star"></span>
+                                                </div>
+                                                <a class="btn btn-primary" href="{{route('user.service_center_profile',[$customer->id,$service_center->id])}}">
+                                                    View Profile</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <a class="btn btn-primary" href="{{route('user.service_center_profile',[$customer->id,$service_center->id])}}">
-                                        View Profile</a>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
+                            @endif
+                        @endforeach
+                    @endforeach
+                @else
+                    @foreach($service_centers as $service_center)
+                                <div class="col">
+                                    <div class="service-center-individual">
+                                        <div class="service-center-image">
+                                            <img src="{{asset('storage/'.$service_center->display_picture)}}" alt="">
+                                        </div>
+                                        <div class="service-center-description">
+                                            <h4>
+                                                @foreach($users as $user)
+                                                    @if($user->id == $service_center->user_id)
+                                                             {{$user->name}}
+                                                    @endif
+                                                @endforeach
+                                            </h4>
+                                            <h6 style="font-style: italic">{{$service_center->address}}</h6>
+                                            <h6 style="font-style: italic">{{$service_center->phone_number}}</h6>
+                                            <div class="d-flex flex-wrap justify-content-between align-items-center">
+                                                <div class="rating-score">
+                                                    <span class="score-txt">4.0</span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star"></span>
+                                                </div>
+                                                <a class="btn btn-primary" href="{{route('user.service_center_profile',[$customer->id,$service_center->id])}}">
+                                                    View Profile</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    @endforeach
+                @endif
             </div>
             <div class="pagination flex-wrap justify-content-center">
                 {{$service_centers->links()}}

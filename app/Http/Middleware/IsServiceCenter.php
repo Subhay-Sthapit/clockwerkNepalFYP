@@ -22,8 +22,8 @@ class IsServiceCenter
                 return $next($request);
             }
         }else{
-            return route('login');
+            return back()->with('error',"you have to be logged in as a service center to access this page");
         }
-        return redirect('/')->with('error',"You don't have service center access.");
+        return back()->with('error',"You don't have service center access as you are not registered as a service center.");
     }
 }

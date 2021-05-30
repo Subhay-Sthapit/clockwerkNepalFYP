@@ -23,8 +23,8 @@ class IsUser
                 return $next($request);
             }
         }else{
-            return route('login');
+            return back()->with('error',"you have to be logged in as a customer to access this page");
         }
-        return redirect('/')->with('error',"You don't have service center access.");
+        return back()->with('error',"You are not a customer and hence dont have customer access .");
     }
 }

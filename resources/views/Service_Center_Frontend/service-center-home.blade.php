@@ -1,14 +1,7 @@
 @extends('layouts.service_center_master')
 @section('title','Service Center Homepage')
 @section('content')
-    @if(session()->has('message'))
-        <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
-            {{session('message')}}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">x</span>
-            </button>
-        </div>
-    @endif
+
     <div class="service-center-profile">
         <div class="service-center-info">
             <div class="container">
@@ -25,14 +18,52 @@
                             {{$service_center->short_description}}
                         </p>
                         <div class="d-flex flex-wrap align-items-center">
-                            <div class="rating-score me-3">
-                                <span class="score-txt">4.0</span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
+                            @foreach($allRatings as $service_centers_id=>$rating)
+                                @if($service_centers_id == $service_center->id)
+                                    <div class="rating-score me-2">
+                                        <span class="score-txt">
+                                            {{$rating}}
+                                        </span>
+                                        @if($rating==1)
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                        @elseif($rating==2)
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                        @elseif($rating==3)
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                        @elseif($rating==4)
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star"></span>
+                                        @elseif($rating==5)
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                        @elseif($rating==0)
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                        @endif
+                                    </div>
+                                @endif
+                            @endforeach
                             <a href="#" id="open-button" class="open-button me-3"><i class="fa fa-edit"></i></a>
                             <a href="#"><i class="fa fa-cog"></i></a>
                         </div>

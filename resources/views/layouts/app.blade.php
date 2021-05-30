@@ -67,6 +67,9 @@
 
                         @endif
                     @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('login')}}">Home Page</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
@@ -98,6 +101,14 @@
             </div>
         </header>
         <main>
+            @if(session()->has('error'))
+                <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
+                    {{session('error')}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">x</span>
+                    </button>
+                </div>
+            @endif
             @yield('content')
         </main>
     </div>

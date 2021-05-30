@@ -1,6 +1,7 @@
 @extends('layouts.user_master')
 @section('title','User Home page')
 @section('content')
+
     <div class="search-bar-section">
         <div class="container">
             <form action="{{route('user.home',$customer->id)}}" method="post" class="site-search d-flex flex-wrap justify-content-center" enctype="multipart/form-data">
@@ -38,14 +39,53 @@
                                             <h6 style="font-style: italic">{{$service_center->address}}</h6>
                                             <h6 style="font-style: italic">{{$service_center->phone_number}}</h6>
                                             <div class="d-flex flex-wrap justify-content-between align-items-center">
-                                                <div class="rating-score">
-                                                    <span class="score-txt">4.0</span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star"></span>
-                                                </div>
+
+                                                @foreach($allRatings as $service_centers_id=>$rating)
+                                                    @if($service_centers_id == $service_center->id)
+                                                        <div class="rating-score">
+                                                            <span class="score-txt">
+                                                                {{$rating}}
+                                                            </span>
+                                                            @if($rating==1)
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                            @elseif($rating==2)
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                            @elseif($rating==3)
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                            @elseif($rating==4)
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star"></span>
+                                                            @elseif($rating==5)
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                            @elseif($rating==0)
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                            @endif
+                                                        </div>
+                                                    @endif
+                                                @endforeach
                                                 <a class="btn btn-primary" href="{{route('user.service_center_profile',[$customer->id,$service_center->id])}}">
                                                     View Profile</a>
                                             </div>
@@ -73,14 +113,52 @@
                                             <h6 style="font-style: italic">{{$service_center->address}}</h6>
                                             <h6 style="font-style: italic">{{$service_center->phone_number}}</h6>
                                             <div class="d-flex flex-wrap justify-content-between align-items-center">
-                                                <div class="rating-score">
-                                                    <span class="score-txt">4.0</span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star"></span>
-                                                </div>
+                                                @foreach($allRatings as $service_centers_id=>$rating)
+                                                    @if($service_centers_id == $service_center->id)
+                                                        <div class="rating-score">
+                                                            <span class="score-txt">
+                                                                {{$rating}}
+                                                            </span>
+                                                            @if($rating==1)
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                            @elseif($rating==2)
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                            @elseif($rating==3)
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                            @elseif($rating==4)
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star"></span>
+                                                            @elseif($rating==5)
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <span class="fa fa-star checked"></span>
+                                                            @elseif($rating==0)
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                                <span class="fa fa-star"></span>
+                                                            @endif
+                                                        </div>
+                                                    @endif
+                                                @endforeach
                                                 <a class="btn btn-primary" href="{{route('user.service_center_profile',[$customer->id,$service_center->id])}}">
                                                     View Profile</a>
                                             </div>
@@ -106,14 +184,52 @@
                                     <h6 style="font-style: italic">{{$service_center->address}}</h6>
                                     <h6 style="font-style: italic">{{$service_center->phone_number}}</h6>
                                     <div class="d-flex flex-wrap justify-content-between align-items-center">
-                                        <div class="rating-score">
-                                            <span class="score-txt">4.0</span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star"></span>
-                                        </div>
+                                        @foreach($allRatings as $service_center_id=>$rating)
+                                            @if($service_center_id == $service_center->id)
+                                                <div class="rating-score">
+                                                            <span class="score-txt">
+                                                                {{$rating}}
+                                                            </span>
+                                                    @if($rating==1)
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    @elseif($rating==2)
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    @elseif($rating==3)
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    @elseif($rating==4)
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    @elseif($rating==5)
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    @elseif($rating==0)
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    @endif
+                                                </div>
+                                            @endif
+                                        @endforeach
                                         <a class="btn btn-primary" href="{{route('user.service_center_profile',[$customer->id,$service_center->id])}}">
                                             View Profile</a>
                                     </div>

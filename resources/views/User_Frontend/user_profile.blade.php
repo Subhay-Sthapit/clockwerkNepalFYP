@@ -1,14 +1,6 @@
 @extends('layouts.user_master')
 @section('title','Profile')
 @section('content')
-    @if(session()->has('message'))
-        <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
-            {{session('message')}}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">x</span>
-            </button>
-        </div>
-    @endif
     <div class="user-profile">
         <div class="user-personal-info">
             <div class="container">
@@ -52,9 +44,9 @@
                                 </form>
                             </div>
                         </div>
+                        {{--      pop up edit form ends          --}}
                     </div>
                 </div>
-                {{--      pop up edit form ends          --}}
             </div>
         </div>
     </div>

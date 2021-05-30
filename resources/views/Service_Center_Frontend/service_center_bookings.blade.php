@@ -1,6 +1,7 @@
 @extends('layouts.service_center_master')
 @section('title','Accept Bookings')
 @section('content')
+
     <div class="booking-history">
         <div class="container">
             <div class="heading">

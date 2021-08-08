@@ -629,3 +629,16 @@ footer ul li{color:#ebebeb; line-height: 1.4; padding:5px 0; font-size:16px;}
 /*Custom File Upload*/
 
 
+/* settings page*/
+.settings-body{
+    padding-top: 50px;
+    text-align: center;
+    display: block;
+    padding-bottom: 50px;
+    background-image: linear-gradient(to right, #faf7f7, #e5e8e8);
+}
+
+.settings-body button{
+    margin: 10px;
+    height: 35px;
+}

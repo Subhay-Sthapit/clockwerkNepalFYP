@@ -65,7 +65,8 @@
                                 @endif
                             @endforeach
                             <a href="#" id="open-button" class="open-button me-3"><i class="fa fa-edit"></i></a>
-                            <a href="#"><i class="fa fa-cog"></i></a>
+{{--                                settings page link--}}
+{{--                            <a href="{{route('service-center.settings',$service_center->id)}}"><i class="fa fa-cog"></i></a>--}}
                         </div>
                         {{--                    booking pop up form --}}
                         <div class="form-popup">

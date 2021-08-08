@@ -12,7 +12,8 @@
                         <h4 class="mb-4">{{auth()->user()->name}}</h4>
                         <p><strong>{{$customer->address}}</strong><br><strong>{{$customer->phone_number}}</strong></p>
                         <a href="#" id="open-button" class="open-button"><i class="fa fa-edit"></i></a>
-                        <a href="#"><i class="fa fa-cog"></i></a>
+{{--                        settings page link--}}
+{{--                        <a href="{{route('user.settings',$customer->id)}}"><i class="fa fa-cog"></i></a>--}}
                         {{--                pop up edit form--}}
                         <div class="form-popup">
                             <div class="form-popup-content">
@@ -45,6 +46,8 @@
                             </div>
                         </div>
                         {{--      pop up edit form ends          --}}
+
+
                     </div>
                 </div>
             </div>

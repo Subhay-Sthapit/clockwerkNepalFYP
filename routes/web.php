@@ -32,6 +32,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // service center routes
 Route::get('service-center/home/{service_center}', 'App\Http\Controllers\ServiceCenterFrontendController@service_center_home')->name('service-center.home')->middleware('IsServiceCenter');
 
+Route::get('service-center/settings/{service_center}','App\Http\Controllers\ServiceCenterFrontendController@settings')->name('service-center.settings')->middleware('IsServiceCenter');
+
+
 Route::get('service-center/bookings/{service_center}', 'App\Http\Controllers\ServiceCenterFrontendController@service_center_bookings')->name('service-center.bookings')->middleware('IsServiceCenter');
 
 Route::get('service-center/info_form', 'App\Http\Controllers\ServiceCenterFrontendController@service_center_info_form')->name('service-center.info_form')->middleware('IsServiceCenter');
@@ -56,6 +59,8 @@ Route::get('customer/profile/{customer}','App\Http\Controllers\CustomerFrontendC
 Route::get('customer/service-center-profile/{customer}/{service_center}','App\Http\Controllers\CustomerFrontendController@service_center_profile')->name('user.service_center_profile')->middleware('IsUser');
 
 Route::get('customer/info-form','App\Http\Controllers\CustomerFrontendController@user_info_form')->name('user.info_form')->middleware('IsUser');
+
+Route::get('customer/settings/{customer}','App\Http\Controllers\CustomerFrontendController@settings')->name('user.settings')->middleware('IsUser');
 
 // User backend routes
 

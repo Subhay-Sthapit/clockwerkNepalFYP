@@ -112,4 +112,12 @@ class CustomerFrontendController extends Controller
     public function user_info_form(){
         return view('User_Frontend/user_info_form');
     }
+
+    public function settings(customer $customer){
+        if ($customer->user_id == auth()->user()->getAuthIdentifier()) {
+            return view('User_Frontend/settings', ['customer' => $customer]);
+        }else{
+            return back()->with('error',"you can only access your own settings page");
+        }
+    }
 }

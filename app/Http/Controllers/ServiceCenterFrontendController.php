@@ -57,4 +57,14 @@ class ServiceCenterFrontendController extends Controller
         }
     }
 
+//    settings page controller
+
+    public function settings(service_center $service_center){
+        if ($service_center->user_id == auth()->user()->getAuthIdentifier()) {
+            return view('Service_Center_Frontend/settings', ['service_center' => $service_center]);
+        }else{
+            return back()->with('error','You can only access your own settings page');
+        }
+    }
+
 }

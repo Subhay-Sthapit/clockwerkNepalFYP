@@ -371,3 +371,23 @@ form .item input, form .item textarea{
     margin: 0 auto;
     padding: 5px;
 }
+
+
+/* Customer Settings Page*/
+/*
+*
+
+*
+*/
+.settings-body{
+    padding-top: 50px;
+    text-align: center;
+    display: block;
+    padding-bottom: 50px;
+    background-image: linear-gradient(to right, #faf7f7, #e5e8e8);
+}
+
+.settings-body button{
+    margin: 10px;
+    height: 35px;
+}
